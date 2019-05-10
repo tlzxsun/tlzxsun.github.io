@@ -19,7 +19,7 @@
     <meta name="description" content>
     <meta name="author" content="Matteo">
     <meta name="keywords" content>
-    <title>Hello World ~ null</title>
+    <title>LeetCode.42 Trapping Rain Water ~ null</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.7.4/css/mdb.min.css">
@@ -66,10 +66,10 @@
     <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center">
         <div class="container text-center white-text wow fadeInUp">
-            <p class="h2">Hello World</p>
+            <p class="h2">LeetCode.42 Trapping Rain Water</p>
             <br>
             
-            <p>Friday, May 10th 2019, 1:48 pm</p>
+            <p>Friday, May 10th 2019, 3:47 pm</p>
             
         </div>
         </div>
@@ -83,19 +83,53 @@
     <div class="row">
         <div class="col-md-8 offset-md-2 ">
             <div class="post-content py-5 z-depth-3 main">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+                <p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">https://leetcode.com/problems/trapping-rain-water/</a></p>
+<p><center><img src="https://upload-images.jianshu.io/upload_images/16684799-daaa1f8abc589d91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示例.jpg"></center> </p>
+<ul>
+<li>开始的想法是从i往后找，直到找到第一个不比height[i]小的数的位置j，计算i-j之间的区域，然后继续从j向后找。但是这样会导致递增里无法计算面积，因此方法变成从i向两找不小于height[i]的位置，但是这样又会导致相等时面积重复计算。</li>
+<li>最终采用的方案是从i向后找，假如找到height[j] &gt;= height[i]的时直接返回j，计算i-j之间的区域，再从j向后查找，假如都比height[i]小的话则找到遍历到的最大的height[j]，计算i-j之间的区域，再从j向后查找。这题虽然是hard难度，但是感觉并没有那么难。<br>附上ac代码<pre><code class="java">class Solution {
+  public int trap(int[] height) {
+      if (height.length &lt; 2) {
+          return 0;
+      }
+      int size = 0;
+      int pos = 0;
+      while (pos &lt; height.length) {
+          if (height[pos] == 0) {
+              pos++;
+              continue;
+          }
+          int rightPos = -1;
+          int tempHigh = 0;
+          for (int i = pos + 1; i &lt; height.length; i++) {
+              //找到大于height[i]则直接返回
+              if (height[i] &gt;= height[pos]) {
+                  rightPos = i;
+                  break;
+              } else {
+                  //否则返回height[i]最大时位置
+                  if (height[i] &gt; tempHigh) {
+                      tempHigh = height[i];
+                      rightPos = i;
+                  }
+              }
+          }
+          if (rightPos != -1) {
+              size += Math.min(height[pos], height[rightPos]) * (rightPos - pos - 1);
+              for (int i = pos + 1; i &lt; rightPos; i++) {
+                  size -= height[i];
+              }
+              pos = rightPos;
+          } else {
+              pos++;
+          }
+      }
+      return size;
+  }
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+</li>
+</ul>
 
                 <hr>
                 <div>
