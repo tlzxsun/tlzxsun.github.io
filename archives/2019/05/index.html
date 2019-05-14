@@ -346,6 +346,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
+            
+                <span>LeetCode.116 Populating Next Right </span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
+这题一开始想着使用按层遍历，但是不知道怎么遍历☹️，经查阅后得知使用LinkedList实现。
+给root的next增加一个特殊标签，当取到next为标签时，说明这个元素是每行第一个，并给它的右结点增加标签，因为右结点是下一层第一个遍历的(满二叉树才行)
+AC代码
+class Solution {
+
+  //上一个遍历的元素
+  Node last;
+  //第一行起始结点的特殊标签
+  Node mark = new Node();
+
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/14/LeetCode-115-Distinct-Distances/">
             
                 <span>LeetCode.115 Distinct Distances</span>
@@ -764,9 +799,16 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -779,6 +821,11 @@ Run server$ hexo se...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/14</span><a class="archive-post-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">LeetCode.116 Populating Next Right </a>
+        </li>
     
     
         <li class="archive-post-item">
