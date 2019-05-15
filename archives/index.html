@@ -346,6 +346,134 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
+            
+                <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+思路
+暴力解法就是在121的基础上加个二分计算，能AC但是需要447ms，时间复杂度O(2$n^2$)
+class Solution {
+
+ public int maxProfit(int[] prices, int start, int end) {
+     int min = Integer.MAX_VALUE, max = 0;
+     for (int i = start; i &lt; end; i++) {
+         //记录到截...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-120-Triangle/">
+            
+                <span>LeetCode.120 Triangle</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/triangle/
+思路
+一开始想到用递归，写的真是优美简洁，然并卵～～一个TLE糊脸
+class Solution {
+
+ int min = Integer.MAX_VALUE;
+
+ public int minimumTotal(List&lt;List&lt;Integer&gt;&gt; triangle) {
+     search(triangle, 0, 0, 0);
+     return min;
+ }
+
+ void search(List&lt;List&lt;Integer&gt;&gt; triangl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/">
+            
+                <span>LeetCode.118 Pascal&#39;s Triangle</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/pascals-triangle/
+思路
+开始想的是直接递归解决，提交后发现TLE，于是采用HashMap记录中间状态，能够AC
+class Solution {
+
+ HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; map = new HashMap&lt;&gt;();
+ List&lt;List&lt;Integer&gt;&gt; results = new ArrayList&lt;&gt;();
+ public List&lt;List&lt;Intege...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">
+            
+                <span>LeetCode.117 Populating Next Right Pointers in Each Node II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+题意
+这一题与116的区别就在于这一题不是满二叉树，所以下一行的起点不是第一个节点的左结点，因此不能用116中的解法。最笨的办法就是用116的方法先层次遍历将每一个结点的next指向下一个遍历到的，然后再右序遍历将最右边结点的next清空，时间复杂度为O(2n)，空间复杂度为O(n)，这样也能AC😂
+
+class Solution {
+
+    //上一个遍历的元素
+    Node last;
+
+    public Node c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
             
                 <span>LeetCode.116 Populating Next Right </span>
@@ -579,61 +707,11 @@ T
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/LeetCode-42-Trapping-Rain-Water/">
-            
-                <span>LeetCode.42 Trapping Rain Water</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/trapping-rain-water/
- 
-
-开始的想法是从i往后找，直到找到第一个不比height[i]小的数的位置j，计算i-j之间的区域，然后继续从j向后找。但是这样会导致递增里无法计算面积，因此方法变成从i向两找不小于height[i]的位置，但是这样又会导致相等时面积重复计算。
-最终采用的方案是从i向后找，假如找到height[j] &gt;= height[i]的时直接返回j，计算i-j之间的区域，再从j向后查找，假如都比height[i]小的话则找到遍历到的最大的height[j]，计算i-j之间的区域，再从j向...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server$ hexo se...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -806,9 +884,61 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -821,6 +951,26 @@ Run server$ hexo se...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">LeetCode.123 Best Time to Buy and Sell Stock III</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/2019/05/15/LeetCode-120-Triangle/">LeetCode.120 Triangle</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/">LeetCode.118 Pascal's Triangle</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">LeetCode.117 Populating Next Right Pointers in Each Node II</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>matteo&#39;s</title>
+    <title>LeetCode.117 Populating Next Right Pointers in Each Node II · matteo&#39;s</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">matteo&#39;s coding field.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">LeetCode.117 Populating Next Right Pointers in Each Node II</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">matteo's coding field.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            matteo's coding field.
-            <!-- 文章页  -->
+            LeetCode.117 Populating Next Right Pointers in Each Node II
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                better late than never
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">583</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/15</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,457 +393,151 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
-            
-                <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-思路
-暴力解法就是在121的基础上加个二分计算，能AC但是需要447ms，时间复杂度O(2$n^2$)
-class Solution {
-
- public int maxProfit(int[] prices, int start, int end) {
-     int min = Integer.MAX_VALUE, max = 0;
-     for (int i = start; i &lt; end; i++) {
-         //记录到截...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-120-Triangle/">
-            
-                <span>LeetCode.120 Triangle</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/triangle/
-思路
-一开始想到用递归，写的真是优美简洁，然并卵～～一个TLE糊脸
-class Solution {
-
- int min = Integer.MAX_VALUE;
-
- public int minimumTotal(List&lt;List&lt;Integer&gt;&gt; triangle) {
-     search(triangle, 0, 0, 0);
-     return min;
- }
-
- void search(List&lt;List&lt;Integer&gt;&gt; triangl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/">
-            
-                <span>LeetCode.118 Pascal&#39;s Triangle</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/pascals-triangle/
-思路
-开始想的是直接递归解决，提交后发现TLE，于是采用HashMap记录中间状态，能够AC
-class Solution {
-
- HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; map = new HashMap&lt;&gt;();
- List&lt;List&lt;Integer&gt;&gt; results = new ArrayList&lt;&gt;();
- public List&lt;List&lt;Intege...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">
-            
-                <span>LeetCode.117 Populating Next Right Pointers in Each Node II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
-题意
-这一题与116的区别就在于这一题不是满二叉树，所以下一行的起点不是第一个节点的左结点，因此不能用116中的解法。最笨的办法就是用116的方法先层次遍历将每一个结点的next指向下一个遍历到的，然后再右序遍历将最右边结点的next清空，时间复杂度为O(2n)，空间复杂度为O(n)，这样也能AC😂
-
-class Solution {
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/" target="_blank" rel="noopener">https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/</a></p>
+<h5 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h5><ul>
+<li>这一题与116的区别就在于这一题不是满二叉树，所以下一行的起点不是第一个节点的左结点，因此不能用116中的解法。最笨的办法就是用116的方法先层次遍历将每一个结点的next指向下一个遍历到的，然后再右序遍历将最右边结点的next清空，时间复杂度为O(2n)，空间复杂度为O(n)，这样也能AC😂</li>
+</ul>
+<pre><code class="java">class Solution {
 
     //上一个遍历的元素
     Node last;
 
-    public Node c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+    public Node connect(Node root) {
+        if (root != null) {
+            //给root结点加上标签
+            LinkedList&lt;Node&gt; queue = new LinkedList&lt;&gt;();
+            //将root结点入列
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                //取出队列中首个结点
+                Node node = queue.poll();
+                //将右结点入列，这个结点将在之后被遍历
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+                //将左子结点入列
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                node.next = last;
+                //将上一个访问的结点设为当前结点
+                last = node;
+            }
+            resetRight(root, 0);
+        }
+        return root;
+    }
+
+    HashSet&lt;Integer&gt; rights = new HashSet&lt;&gt;();
+    void resetRight(Node root,int level) {
+        if (root != null) {
+            resetRight(root.right, level + 1);
+            if (!rights.contains(level)) {
+                root.next = null;
+                rights.add(level);
+            }
+            resetRight(root.left, level + 1);
+        }
+    }
+}
+</code></pre>
+<h5 id="比较好的方案"><a href="#比较好的方案" class="headerlink" title="比较好的方案"></a>比较好的方案</h5><ul>
+<li>采用三个变量cur，head和pre，cur用来做层次遍历，head用来保存每一行的起始结点，pre用来保存上一个遍历到的结点，时间复杂度为O(n)，空间复杂度为O(1)</li>
+</ul>
+<pre><code class="java">class Solution {
+
+    public Node connect(Node root) {
+        if (root != null) {
+            //cur用来遍历，head用来保存每一层的起始结节，pre用来保存上一个结点
+            Node cur = root, pre = null, head = null;
+            //外层循环用来判断是否遍历完成
+            while (cur != null) {
+                //内层循环用来判断该层是否遍历完成
+                while (cur != null) {
+                    //左结点不为空
+                    if (cur.left != null) {
+                        //上一个结点为空，说明是一层起点，给head和pre赋值
+                        if (pre == null) {
+                            pre = cur.left;
+                            head = cur.left;
+                        } else {
+                            //否则将pre.next指向当前，并将pre.next赋值给pre
+                            pre.next = cur.left;
+                            pre = pre.next;
+                        }
+                    }
+                    //同左结点
+                    if (cur.right != null) {
+                        if (pre == null) {
+                            pre = cur.right;
+                            head = cur.right;
+                        } else {
+                            pre.next = cur.right;
+                            pre = pre.next;
+                        }
+                    }
+                    //将cur指向cur.next遍历该层其它子树结点
+                    cur = cur.next;
+                }
+                //一层遍历完成后将cur指向下一层起始节点，并初始化pre和head
+                cur = head;
+                pre = null;
+                head = null;
+            }
+        }
+        return root;
+    }
+}
+</code></pre>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
-            
-                <span>LeetCode.116 Populating Next Right </span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
-
-这题一开始想着使用按层遍历，但是不知道怎么遍历☹️，经查阅后得知使用LinkedList实现。
-给root的next增加一个特殊标签，当取到next为标签时，说明这个元素是每行第一个，并给它的右结点增加标签，因为右结点是下一层第一个遍历的(满二叉树才行)
-AC代码
-class Solution {
-
-  //上一个遍历的元素
-  Node last;
-  //第一行起始结点的特殊标签
-  Node mark = new Node();
-
-...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://tlzxsun.github.io">Matteo</a>
+            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">http://tlzxsun.github.io/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/</a>
+            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">May 15th 2019, 9:20:54 am</a>
+            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">May 15th 2019, 9:21:21 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/14/LeetCode-115-Distinct-Distances/">
-            
-                <span>LeetCode.115 Distinct Distances</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/distinct-subsequences/
-
-开始时候想着递归做，后来想想肯定会超时，就放弃了。昨天刚做了八皇后问题，感觉跟这个比较像，先定确定一个位置，再继续向后查找，直到找到一个解。找到解后再回溯，写出来发现还是超时😞
-先贴下超时的解
-class Solution {
-  public int numDistinct(String s, String t) {
-      int count = 0;
-      //标记s和t的查找位置
-      int sIndex = 0, tIndex = 0;
-      L...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-99-Recover-Binary-Search-Tree/">
-            
-                <span>LeetCode.99 Recover Binary Search Tree</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/recover-binary-search-tree/
-
-二叉搜索树中序遍历(In-Order Traversal)必定有序
-
-
-先来看一个naive的方法，即使用O(n)的空间复杂度应该怎么解决．我们可以开一个数组，中序遍历树，并将其依次保存在数组中．如果是一个正常的二叉搜索树将会是完全有序的．然而当交换了其中两个结点之后就会出现两个结点出现在错误的位置．举个栗子：[1, 2, 3, 4, 5, 6]，这是一个正常的二叉搜索数的序列，当交换了其中两个结点之后变成了[1, 5, 3, 4, 2, 6]．那么如何找到这两个交换的结...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-51-N-Queens/">
-            
-                <span>LeetCode.51 N Queens</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/n-queens/
-
-经典N皇后问题，先背一个解法吧，具体见注释
-class Solution {
-  int q[];
-  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
-
-  public List&lt;List&lt;String&gt;&gt; solveNQueens(int n) {
-      int r = 0, c = 0;
-      q = new int[n];
-      for (int i = 0; i &lt; ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-72-Edit-Distance/">
-            
-                <span>LeetCode.72 Edit Distance</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/edit-distance/
-
-这一题没做出来，参考的别人的答案😞
-使用dis[i][j]记录匹配到i,j位置里的最短距离
-边界情况dis[0][i]和dis[0][j]，即words1, words2一方为空串，可知距离为另一方长度
-当words[i]==words[j]， 则dis[i][j]=dis[i-1][j-1]
-当words[i]!=words[j-1]，则有下面三种情况，取最小值
-words1插入，dis[i][j]=dis[i][j-1]+1
-words1删除，dis[i][j]=dis[i-1][j]+1
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/LeetCode-44-Wildcard-Matching/">
-            
-                <span>LeetCode.44 Wildcard Matching</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/wildcard-matching/
-
-前几天做https://leetcode.com/problems/interleaving-string/的时候，开始用的递归，在最后一个测试用例时TLF。学习别人思路时看到一句话，所以字符串匹配的都用动态规划，要不然肯定TLF，很有道理的样子。因此这题一开始就没打算用递归。
-以”adceb”和”*a*b”为例讲下思路
-
-
-
-
-
-
-a
-b
-c
-e
-b
-
-
-
-
-*
-T
-T
-T
-T
-T
-T
-
-
-a
-F
-T
-F
-F
-F
-F
-
-
-*
-F
-T
-T
-T
-T
-T
-
-
-b
-F
-F
-F
-T
-F
-T
-
-
-
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="https://avatars1.githubusercontent.com/u/6398873?s=400&v=4">
-    <div class="profile-name">matteo</div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/" title="LeetCode.118 Pascal's Triangle">
+                    <div class="nextTitle">LeetCode.118 Pascal's Triangle</div>
+                </a>
             
-                <a href="mailto:tlzxsun@gmail.com" class="iconfont-archer email" title="email"></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/05/14/LeetCode-116-Populating-Next-Right/" title="LeetCode.116 Populating Next Right ">
+                    <div class="prevTitle">LeetCode.116 Populating Next Right </div>
+                </a>
             
-                <a href="https://github.com/tlzxsun" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/qrcode.jpeg">
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -884,6 +620,24 @@ T
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#比较好的方案"><span class="toc-number">2.</span> <span class="toc-text">比较好的方案</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1171,6 +925,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
