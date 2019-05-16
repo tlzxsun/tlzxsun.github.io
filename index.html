@@ -359,6 +359,66 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
+            
+                <span>LeetCode.126 Word Ladder II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/word-ladder-ii/
+思路
+这题可能用126的解法，区别在于这题需要记下所有的最短解，作下面几点修改
+queue中需要记下完整路径，每一层往queue中增加最短解的时候需要在新增list里增加当前word
+每一层中前面使用的word也能用于后面的情况，但是后面层不会出现该层及之前使用的word，因为广度优先搜索，每个word第一次出现的肯定是最短路
+当某一层中找到解之后，该层遍历结束后即结束寻找
+
+
+虽然很慢，但还是AC了，后续再看找更优解法
+
+解法class Solution {
+    public List&lt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">
+            
+                <span>LeetCode.127 Word Ladder</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/word-ladder/
+思路
+开始用dfs递归，不出所望超时了，后来想着用动态规划，做了一上午没有一点头绪。算法实在太难了，真心不适合我😭
+因为要求最短路径，如果我们用深度优先搜索的话必须遍历所有的路径才能确定哪个是最短的，而用广度优先搜索的话，一旦搜到目标就可以提前终止了，而且根据广度优先的性质，我们肯定是先通过较短的路径搜到目标。另外，为了避免产生环路和重复计算，我们找到一个存在于字典的新的词时，就要把它从字典中移去。这么做是因为根据广度优先，我们第一次发现词A的路径一定是从初始词到词A最短的路径，对于其他可能再经过词A...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
             
                 <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
@@ -603,117 +663,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-72-Edit-Distance/">
-            
-                <span>LeetCode.72 Edit Distance</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/edit-distance/
-
-这一题没做出来，参考的别人的答案😞
-使用dis[i][j]记录匹配到i,j位置里的最短距离
-边界情况dis[0][i]和dis[0][j]，即words1, words2一方为空串，可知距离为另一方长度
-当words[i]==words[j]， 则dis[i][j]=dis[i-1][j-1]
-当words[i]!=words[j-1]，则有下面三种情况，取最小值
-words1插入，dis[i][j]=dis[i][j-1]+1
-words1删除，dis[i][j]=dis[i-1][j]+1
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/LeetCode-44-Wildcard-Matching/">
-            
-                <span>LeetCode.44 Wildcard Matching</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/wildcard-matching/
-
-前几天做https://leetcode.com/problems/interleaving-string/的时候，开始用的递归，在最后一个测试用例时TLF。学习别人思路时看到一句话，所以字符串匹配的都用动态规划，要不然肯定TLF，很有道理的样子。因此这题一开始就没打算用递归。
-以”adceb”和”*a*b”为例讲下思路
-
-
-
-
-
-
-a
-b
-c
-e
-b
-
-
-
-
-*
-T
-T
-T
-T
-T
-T
-
-
-a
-F
-T
-F
-F
-F
-F
-
-
-*
-F
-T
-T
-T
-T
-T
-
-
-b
-F
-F
-F
-T
-F
-T
-
-
-
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
             </div>
             <!-- tags  -->
             
@@ -1023,9 +972,33 @@ T
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -1038,6 +1011,16 @@ T
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">LeetCode.126 Word Ladder II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">LeetCode.127 Word Ladder</a>
+        </li>
     
     
         <li class="archive-post-item">
