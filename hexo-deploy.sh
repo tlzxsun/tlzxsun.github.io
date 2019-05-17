@@ -1,2 +1,3 @@
 #!/usr/bin/env sh
-hexo deploy
+hexo g
+hexo d
