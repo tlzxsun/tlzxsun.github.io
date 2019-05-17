@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · matteo&#39;s</title>
+    <title>LeetCode.134 Gas Station · matteo&#39;s</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">matteo&#39;s coding field.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">LeetCode.134 Gas Station</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            LeetCode.134 Gas Station
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">75</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">607</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/10</span>
+                    <span class="post-intro-time">2019/05/17</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,28 +395,72 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <p><a href="https://leetcode.com/problems/gas-station/submissions/" target="_blank" rel="noopener">https://leetcode.com/problems/gas-station/submissions/</a></p>
+<h5 id="思路1"><a href="#思路1" class="headerlink" title="思路1 "></a>思路1 </h5><ol>
+<li>算出每个station出发之后剩余的gas，保存在数组中</li>
+<li>从数组中找出剩余gas不小于0的位置，然后从该位置开始查询，走回原点或者gas小于0退出循环</li>
+<li>这个解法能AC，但是非常慢，继续想</li>
+</ol>
+<ul>
+<li>AC解<pre><code class="java">class Solution {
+  public int canCompleteCircuit(int[] gas, int[] cost) {
+      int gasLeft[] = new int[gas.length];
+      for (int i = 0; i &lt; gas.length; i++) {
+          gasLeft[i] = gas[i] - cost[i];
+      }
+      for (int i = 0; i &lt; gas.length; i++) {
+          if (gasLeft[i] &gt;= 0) {
+              int g = gasLeft[i];
+              for (int j = i + 1; ; j++) {
+                  j%=gas.length;
+                  g += gasLeft[j];
+                  if (g &lt; 0) {
+                      break;
+                  }
+                  if (j == i) {
+                      return i;
+                  }
+              }
+          }
+      }
+      return -1;
+  }
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<h5 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h5><blockquote>
+<p>累加在每个位置的left += gas[i] - cost[i], 就是在每个位置剩余的油量, 如果left一直大于0, 就可以一直走下取. 如果left小于0了, 那么就从下一个位置重新开始计数, 并且将之前欠下的多少记录下来, 如果最终遍历完数组剩下的燃料足以弥补之前不够的, 那么就可以到达, 并返回最后一次开始的位置.否则就返回-1.<br>证明这种方法的正确性: </p>
+<ol>
+<li>如果从头开始, 每次累计剩下的油量都为整数, 那么没有问题, 他可以从头开到结束.</li>
+<li>如果到中间的某个位置, 剩余的油量为负了, 那么说明之前累积剩下的油量不够从这一站到下一站了. 那么就从下一站从新开始计数. 为什么是下一站, 而不是之前的某站呢? 因为第一站剩余的油量肯定是大于等于0的, 然而到当前一站油量变负了, 说明从第一站之后开始的话到当前油量只会更少而不会增加. 也就是说从第一站之后, 当前站之前的某站出发到当前站剩余的油量是不可能大于0的. 所以只能从下一站重新出发开始计算从下一站开始剩余的油量, 并且把之前欠下的油量也累加起来, 看到最后剩余的油量是不是大于欠下的油量.<br><a href="https://blog.csdn.net/qq508618087/article/details/50990076" target="_blank" rel="noopener">https://blog.csdn.net/qq508618087/article/details/50990076</a></li>
+</ol>
+</blockquote>
+</li>
+<li>源码<pre><code class="java">class Solution {
+  public int canCompleteCircuit(int[] gas, int[] cost) {
+      int left = 0, lack = 0, start = 0;
+      for (int i = 0; i&lt; gas.length ; i++) {
+          left += gas[i] - cost[i];
+          if (left &lt; 0) {
+              start = i + 1;
+              lack += left;
+              left = 0;
+          }
+      }
+      return (left + lack &gt;= 0)?start:-1;
+  }
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+</li>
+</ul>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://tlzxsun.github.io">Matteo</a>
-            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/10/hello-world/">http://tlzxsun.github.io/2019/05/10/hello-world/</a>
-            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/10/hello-world/">May 10th 2019, 1:48:00 pm</a>
-            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/10/hello-world/">May 10th 2019, 2:55:07 pm</a>
+            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-134-Gas-Station-1/">http://tlzxsun.github.io/2019/05/17/LeetCode-134-Gas-Station-1/</a>
+            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-134-Gas-Station-1/">May 17th 2019, 6:33:57 pm</a>
+            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-134-Gas-Station-1/">May 17th 2019, 6:34:04 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -424,13 +468,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/10/LeetCode-42-Trapping-Rain-Water/" title="LeetCode.42 Trapping Rain Water">
-                    <div class="nextTitle">LeetCode.42 Trapping Rain Water</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/05/17/LeetCode-133-Clone-Graph/" title="LeetCode.133 Clone Graph">
+                    <div class="prevTitle">LeetCode.133 Clone Graph</div>
+                </a>
             
         </li>
     </ul>
@@ -548,7 +592,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路1"><span class="toc-number">1.</span> <span class="toc-text">思路1 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#思路2"><span class="toc-number">2.</span> <span class="toc-text">思路2</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
