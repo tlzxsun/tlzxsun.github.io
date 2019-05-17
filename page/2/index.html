@@ -359,6 +359,101 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
+            
+                <span>LeetCode.116 Populating Next Right </span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
+这题一开始想着使用按层遍历，但是不知道怎么遍历☹️，经查阅后得知使用LinkedList实现。
+给root的next增加一个特殊标签，当取到next为标签时，说明这个元素是每行第一个，并给它的右结点增加标签，因为右结点是下一层第一个遍历的(满二叉树才行)
+AC代码
+class Solution {
+
+  //上一个遍历的元素
+  Node last;
+  //第一行起始结点的特殊标签
+  Node mark = new Node();
+
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/14/LeetCode-115-Distinct-Distances/">
+            
+                <span>LeetCode.115 Distinct Distances</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/distinct-subsequences/
+
+开始时候想着递归做，后来想想肯定会超时，就放弃了。昨天刚做了八皇后问题，感觉跟这个比较像，先定确定一个位置，再继续向后查找，直到找到一个解。找到解后再回溯，写出来发现还是超时😞
+先贴下超时的解
+class Solution {
+  public int numDistinct(String s, String t) {
+      int count = 0;
+      //标记s和t的查找位置
+      int sIndex = 0, tIndex = 0;
+      L...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/13/LeetCode-99-Recover-Binary-Search-Tree/">
+            
+                <span>LeetCode.99 Recover Binary Search Tree</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/recover-binary-search-tree/
+
+二叉搜索树中序遍历(In-Order Traversal)必定有序
+
+
+先来看一个naive的方法，即使用O(n)的空间复杂度应该怎么解决．我们可以开一个数组，中序遍历树，并将其依次保存在数组中．如果是一个正常的二叉搜索树将会是完全有序的．然而当交换了其中两个结点之后就会出现两个结点出现在错误的位置．举个栗子：[1, 2, 3, 4, 5, 6]，这是一个正常的二叉搜索数的序列，当交换了其中两个结点之后变成了[1, 5, 3, 4, 2, 6]．那么如何找到这两个交换的结...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/13/LeetCode-51-N-Queens/">
             
                 <span>LeetCode.51 N Queens</span>
@@ -879,9 +974,64 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -894,6 +1044,21 @@ Run server$ hexo se...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-131-Palindrome-Partitioning/">LeetCode.131 Palindrome Partitioning</a>
+        </li>
     
     
         <li class="archive-post-item">
