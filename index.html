@@ -359,6 +359,72 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/20/LeetCode-138/">
+            
+                <span>LeetCode.138</span>
+        </a>
+        <div class="abstract-content">
+            题意拷贝一个结点的所有子结点，与前面有一题一样的解法
+class Solution {
+
+    Map&lt;Node, Node&gt; copied = new HashMap&lt;&gt;();
+
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return null;
+        }
+        if (copied.containsKey(head)) {
+            return copied.get(head);
+        }...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/20/LeetCode-135-Single-Number/">
+            
+                <span>LeetCode.135 Single Number</span>
+        </a>
+        <div class="abstract-content">
+            题意
+一次循环找出数组中唯一一个只出现一次的数字
+直接放别人的解吧，好精妙https://blog.csdn.net/Cloudox_/article/details/52459584 public int singleNumber(int[] nums) {
+      int result = 0;
+      for(int i=0;i&lt;nums.length;i++) result ^= nums[i];
+      return result;
+}
+
+解释
+四行代码就解决了，我们看看它做了什么，先设定一个0，然后循环和数组中的每个数去做异或运算，每次得出的结果都继续和下一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">
             
                 <span>LeetCode.134 Gas Station</span>
@@ -595,75 +661,10 @@ class Solution {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-120-Triangle/">
-            
-                <span>LeetCode.120 Triangle</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/triangle/
-思路
-一开始想到用递归，写的真是优美简洁，然并卵～～一个TLE糊脸
-class Solution {
-
- int min = Integer.MAX_VALUE;
-
- public int minimumTotal(List&lt;List&lt;Integer&gt;&gt; triangle) {
-     search(triangle, 0, 0, 0);
-     return min;
- }
-
- void search(List&lt;List&lt;Integer&gt;&gt; triangl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/">
-            
-                <span>LeetCode.118 Pascal&#39;s Triangle</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/pascals-triangle/
-思路
-开始想的是直接递归解决，提交后发现TLE，于是采用HashMap记录中间状态，能够AC
-class Solution {
-
- HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; map = new HashMap&lt;&gt;();
- List&lt;List&lt;Integer&gt;&gt; results = new ArrayList&lt;&gt;();
- public List&lt;List&lt;Intege...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1048,9 +1049,45 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 21
         </div>
         <!-- search  -->
         
@@ -1066,17 +1103,27 @@ class Solution {
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-138/">LeetCode.138</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-135-Single-Number/">LeetCode.135 Single Number</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">LeetCode.134 Gas Station</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
