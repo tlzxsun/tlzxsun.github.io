@@ -346,6 +346,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/10/LeetCode-42-Trapping-Rain-Water/">
+            
+                <span>LeetCode.42 Trapping Rain Water</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/trapping-rain-water/
+ 
+
+开始的想法是从i往后找，直到找到第一个不比height[i]小的数的位置j，计算i-j之间的区域，然后继续从j向后找。但是这样会导致递增里无法计算面积，因此方法变成从i向两找不小于height[i]的位置，但是这样又会导致相等时面积重复计算。
+最终采用的方案是从i向后找，假如找到height[j] &gt;= height[i]的时直接返回j，计算i-j之间的区域，再从j向后查找，假如都比height[i]小的话则找到遍历到的最大的height[j]，计算i-j之间的区域，再从j向...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/10/hello-world/">
             
                 <span>Hello World</span>
@@ -717,9 +744,26 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -735,7 +779,12 @@ Run server$ hexo se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-138/">LeetCode.138</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/LeetCode-135-Candy/">LeetCode.135 Candy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-138/">LeetCode.138 Copy List with Random Pointer  </a>
         </li>
     
     
@@ -750,12 +799,12 @@ Run server$ hexo se...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     

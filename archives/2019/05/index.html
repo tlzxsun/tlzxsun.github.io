@@ -346,9 +346,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/22/LeetCode-135-Candy/">
+            
+                <span>LeetCode.135 Candy</span>
+        </a>
+        <div class="abstract-content">
+            题意给一个数组代表权重，给数组每一个元素赋值，值最小为1，且相邻的元素权重大的值必须大于权重小的
+分析
+直接给第一个元素赋值1，然后依次比较，有三种情况
+
+
+ratings[i] &gt; ratings[i - 1]，则当前值为前一个的值加1
+ratings[i] == ratings[i - 1]，则当前值为1
+ratings[i] &lt; ratings[i - 1]，刚当前值为1，这时候需要处理前一个值也为1的情况，需要往前遍历，将ratings[i - 1]加1
+
+
+这个解法能AC，但是非常慢
+class Solution {
+  public int candy(int[]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/20/LeetCode-138/">
             
-                <span>LeetCode.138</span>
+                <span>LeetCode.138 Copy List with Random Pointer  </span>
         </a>
         <div class="abstract-content">
             题意拷贝一个结点的所有子结点，与前面有一题一样的解法
@@ -611,37 +646,6 @@ queue中需要记下完整路径，每一层往queue中增加最短解的时候�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
-            
-                <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-思路
-暴力解法就是在121的基础上加个二分计算，能AC但是需要447ms，时间复杂度O(2$n^2$)
-class Solution {
-
- public int maxProfit(int[] prices, int start, int end) {
-     int min = Integer.MAX_VALUE, max = 0;
-     for (int i = start; i &lt; end; i++) {
-         //记录到截...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
             </div>
             <!-- tags  -->
             
@@ -998,9 +1002,26 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 21
+        Total : 22
         </div>
         <!-- search  -->
         
@@ -1016,7 +1037,12 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-138/">LeetCode.138</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/LeetCode-135-Candy/">LeetCode.135 Candy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/20</span><a class="archive-post-title" href="/2019/05/20/LeetCode-138/">LeetCode.138 Copy List with Random Pointer  </a>
         </li>
     
     
@@ -1031,12 +1057,12 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     

@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LeetCode.51 N Queens · matteo&#39;s</title>
+    <title>LeetCode.135 Candy · matteo&#39;s</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">matteo&#39;s coding field.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">LeetCode.51 N Queens</a>
+                <a href="#" class="post-name">LeetCode.135 Candy</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            LeetCode.51 N Queens
+            LeetCode.135 Candy
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">381</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">600</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/13</span>
+                    <span class="post-intro-time">2019/05/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,78 +395,91 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="https://leetcode.com/problems/n-queens/" target="_blank" rel="noopener">https://leetcode.com/problems/n-queens/</a></p>
+        <h5 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h5><p>给一个数组代表权重，给数组每一个元素赋值，值最小为1，且相邻的元素权重大的值必须大于权重小的</p>
+<h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><ul>
+<li>直接给第一个元素赋值1，然后依次比较，有三种情况</li>
+</ul>
+<ol>
+<li>ratings[i] &gt; ratings[i - 1]，则当前值为前一个的值加1</li>
+<li>ratings[i] == ratings[i - 1]，则当前值为1</li>
+<li>ratings[i] &lt; ratings[i - 1]，刚当前值为1，这时候需要处理前一个值也为1的情况，需要往前遍历，将ratings[i - 1]加1</li>
+</ol>
 <ul>
-<li><p>经典N皇后问题，先背一个解法吧，具体见注释</p>
+<li><p>这个解法能AC，但是非常慢</p>
 <pre><code class="java">class Solution {
-  int q[];
-  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
-
-  public List&lt;List&lt;String&gt;&gt; solveNQueens(int n) {
-      int r = 0, c = 0;
-      q = new int[n];
-      for (int i = 0; i &lt; n; i++) {
-          q[i] = -1;
+  public int candy(int[] ratings) {
+      if (ratings.length &lt; 2) {
+          return ratings.length;
       }
-      while (r &lt; n) {
-          while (c &lt; n) { //探测r行是否可以放置
-              if (valid(r, c)) {  //r行c列可以放置
-                  q[r] = c;   //放置
-                  c = 0;  //下一行从0开始探测
-                  break;
-              } else {
-                  c++;    //探测下一列
-              }
+      int cnts[] = new int[ratings.length];
+      cnts[0] = 1;
+      for (int i = 1; i &lt; ratings.length; i++) {
+          if (ratings[i] &gt; ratings[i-1]) {
+              cnts[i] = cnts[i - 1] + 1;
+          } else if (ratings[i] &lt; ratings[i-1]) {
+              cnts[i] = 1;
+              recover(ratings, cnts, i);
+          } else {
+              cnts[i] = 1;
           }
-          if (q[r] == -1) {   //该行未找到位置
-              if (r == 0) {   //第一行未找到，没有结果，返回
-                  break;
-              } else {    //没有找到可以放置皇后的列，回溯
-                  r--;
-                  c = q[r] + 1;   //上一行皇后位置向后移动
-                  q[r] = -1;  //重置上一行原来位置
-                  continue;
-              }
-          }
-          if (r == n - 1) {   //最后一行找到了皇后位置
-              addResult(n);   //加入结果
-              c = q[r] + 1;   //从最后一行放置皇后位置后探测
-              q[r] = -1;  //重置最后一行皇后
-              continue;
-          }
-          r++;    //探测下一行
       }
-      return results;
+      int count = 0;
+      for (int i = 0; i &lt; cnts.length; i++) {
+          count += cnts[i];
+      }
+      return count;
   }
 
-  void addResult(int n) {
-      List&lt;String&gt; result = new ArrayList&lt;&gt;();
-      for (int i = 0; i &lt; n; i++) {
-          StringBuilder builder = new StringBuilder();
-          for (int j = 0; j &lt; n; j++) {
-              if (j != q[i]) {
-                  builder.append(&quot;.&quot;);
-              } else {
-                  builder.append(&quot;Q&quot;);
-              }
+  void recover(int ratings[], int[] cnts, int start) {
+      while (start &gt; 0) {
+          //往前遍历处理，cnts相同，且ratings小的情况
+          if (ratings[start - 1] &gt; ratings[start] &amp;&amp; cnts[start - 1] == cnts[start]) {
+              cnts[start - 1] ++;
+          } else {
+              break;
           }
-          result.add(builder.toString());
+          start--;
       }
-      results.add(result);
-  }
-
-  boolean valid(int r, int c) {
-      for (int i = 0; i &lt; r; i++) {
-          //q[i] == c，即之前列中皇后是否在该列
-          //c - q[i]即c-i行的c，r-i即r-i行的r，两者相等则说明在对角线上
-          if (q[i] == c || Math.abs(c - q[i]) == Math.abs(r - i)) {
-              return false;
-          }
-      }
-      return true;
   }
 }
 </code></pre>
+<h5 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h5></li>
+<li>直接参考别人的解法吧～<a href="https://blog.csdn.net/JackZhang_123/article/details/78008766" target="_blank" rel="noopener">https://blog.csdn.net/JackZhang_123/article/details/78008766</a><br><code>`</code>java<br>import java.util.Arrays;</li>
+</ul>
+<p>/*</p>
+<ul>
+<li>典型的贪心算法</li>
+<li>题本身可以用贪心法来做，我们用candy[n]表示每个孩子的糖果数，遍历过程中，</li>
+<li>如果孩子i+1的rate大于孩子i 的rate，那么当前最好的选择自然是：给孩子i+1的糖果数=给孩子i的糖果数+1</li>
+<li>如果孩子i+1的rate小于等于孩子i 的rate咋整？这个时候就不大好办了，</li>
+<li>因为我们不知道当前最好的选择是给孩子i+1多少糖果。</li>
+<li>解决方法是：暂时不处理这种情况。等数组遍历完了，我们再一次从尾到头遍历数组，</li>
+<li>这回逆过来贪心，就可以处理之前略过的孩子。</li>
+<li>最后累加candy[n]即得到最小糖果数。</li>
+<li><p>*/<br>public class Solution<br>{<br> public int candy(int[] ratings)<br> {</p>
+<pre><code> if(ratings==null || ratings.length&lt;=0)
+     return 0;
+
+ int []num = new int[ratings.length];
+ Arrays.fill(num, 1);
+
+ for(int i=1;i&lt;ratings.length;i++)
+ {
+     if(ratings[i]&gt;ratings[i-1])
+         num[i]=num[i-1]+1;
+ }
+
+ for(int i=ratings.length-2;i&gt;=0;i--)
+ {
+     if(ratings[i]&gt;ratings[i+1] &amp;&amp; num[i] &lt; num[i+1]+1)
+         num[i]=num[i+1]+1;
+ }
+
+ int sum=0;
+ for(int i=0;i&lt;num.length;i++)
+     sum+=num[i];
+ return sum; 
+</code></pre><p> }<br>}<br><code>`</code></p>
 </li>
 </ul>
 
@@ -475,9 +488,9 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://tlzxsun.github.io">Matteo</a>
-            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/13/LeetCode-51-N-Queens/">http://tlzxsun.github.io/2019/05/13/LeetCode-51-N-Queens/</a>
-            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/13/LeetCode-51-N-Queens/">May 13th 2019, 2:50:59 pm</a>
-            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/13/LeetCode-51-N-Queens/">May 13th 2019, 2:53:52 pm</a>
+            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/22/LeetCode-135-Candy/">http://tlzxsun.github.io/2019/05/22/LeetCode-135-Candy/</a>
+            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/22/LeetCode-135-Candy/">May 22nd 2019, 9:29:38 am</a>
+            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/22/LeetCode-135-Candy/">May 22nd 2019, 9:29:40 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -485,17 +498,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/13/LeetCode-99-Recover-Binary-Search-Tree/" title="LeetCode.99 Recover Binary Search Tree">
-                    <div class="nextTitle">LeetCode.99 Recover Binary Search Tree</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/05/13/LeetCode-72-Edit-Distance/" title="LeetCode.72 Edit Distance">
-                    <div class="prevTitle">LeetCode.72 Edit Distance</div>
+                <a href="/2019/05/20/LeetCode-138/" title="LeetCode.138 Copy List with Random Pointer  ">
+                    <div class="prevTitle">LeetCode.138 Copy List with Random Pointer  </div>
                 </a>
             
         </li>
@@ -614,7 +622,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分析"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#贪心"><span class="toc-number">3.</span> <span class="toc-text">贪心</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
