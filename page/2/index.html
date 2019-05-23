@@ -359,6 +359,32 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">
+            
+                <span>LeetCode.127 Word Ladder</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/word-ladder/
+思路
+开始用dfs递归，不出所望超时了，后来想着用动态规划，做了一上午没有一点头绪。算法实在太难了，真心不适合我😭
+因为要求最短路径，如果我们用深度优先搜索的话必须遍历所有的路径才能确定哪个是最短的，而用广度优先搜索的话，一旦搜到目标就可以提前终止了，而且根据广度优先的性质，我们肯定是先通过较短的路径搜到目标。另外，为了避免产生环路和重复计算，我们找到一个存在于字典的新的词时，就要把它从字典中移去。这么做是因为根据广度优先，我们第一次发现词A的路径一定是从初始词到词A最短的路径，对于其他可能再经过词A...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
             
                 <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
@@ -635,85 +661,6 @@ words1删除，dis[i][j]=dis[i-1][j]+1
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/LeetCode-44-Wildcard-Matching/">
-            
-                <span>LeetCode.44 Wildcard Matching</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/wildcard-matching/
-
-前几天做https://leetcode.com/problems/interleaving-string/的时候，开始用的递归，在最后一个测试用例时TLF。学习别人思路时看到一句话，所以字符串匹配的都用动态规划，要不然肯定TLF，很有道理的样子。因此这题一开始就没打算用递归。
-以”adceb”和”*a*b”为例讲下思路
-
-
-
-
-
-
-a
-b
-c
-e
-b
-
-
-
-
-*
-T
-T
-T
-T
-T
-T
-
-
-a
-F
-T
-F
-F
-F
-F
-
-
-*
-F
-T
-T
-T
-T
-T
-
-
-b
-F
-F
-F
-T
-F
-T
-
-
-
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
             </div>
             <!-- tags  -->
             
@@ -1160,10 +1107,9 @@ T
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 22
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -1176,6 +1122,11 @@ T
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href="/2019/05/23/LeetCode-139-Word-Break/">LeetCode.139 Word Break</a>
+        </li>
     
     
         <li class="archive-post-item">

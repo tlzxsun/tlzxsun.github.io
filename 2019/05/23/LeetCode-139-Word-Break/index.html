@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LeetCode.133 Clone Graph · matteo&#39;s</title>
+    <title>LeetCode.139 Word Break · matteo&#39;s</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">matteo&#39;s coding field.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">LeetCode.133 Clone Graph</a>
+                <a href="#" class="post-name">LeetCode.139 Word Break</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            LeetCode.133 Clone Graph
+            LeetCode.139 Word Break
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">124</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">294</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/17</span>
+                    <span class="post-intro-time">2019/05/23</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,27 +395,53 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="https://leetcode.com/problems/clone-graph/" target="_blank" rel="noopener">https://leetcode.com/problems/clone-graph/</a></p>
-<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><ul>
-<li>头昏眼花想不出任何方法，看了别人思路发现好简单<blockquote>
-<p>1、广度优先遍历(BFS)<br>2、深度优先遍历(DFS)<br>2.1、递归<br>2.2、非递归<br><a href="https://www.cnblogs.com/ganganloveu/p/4119462.html" target="_blank" rel="noopener">https://www.cnblogs.com/ganganloveu/p/4119462.html</a></p>
-</blockquote>
-<h5 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h5><pre><code class="java">class Solution {
-  HashMap&lt;Node, Node&gt; map = new HashMap&lt;&gt;();
-  public Node cloneGraph(Node node) {
-      if (node == null) {
-          return null;
+        <h5 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h5><ul>
+<li>给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用<h5 id="TLE解法"><a href="#TLE解法" class="headerlink" title="TLE解法"></a>TLE解法</h5></li>
+<li><p>TLE的自然是递归了😩</p>
+<pre><code class="java">class Solution {
+  Set&lt;String&gt; used = new HashSet&lt;&gt;();
+
+  public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
+      return search(s, wordDict, 0);
+  }
+
+  boolean search(String s, List&lt;String&gt; wordDict, int start) {
+      for (int i = 0; i &lt; wordDict.size(); i++) {
+          if (s.startsWith(wordDict.get(i), start)) {
+              if (start + wordDict.get(i).length() == s.length() &amp;&amp; s.endsWith(wordDict.get(i))) {
+                  return true;
+              }
+              boolean result = search(s, wordDict, start + wordDict.get(i).length());
+              if (result) {
+                  return true;
+              }
+          }
       }
-      if (map.containsKey(node)) {
-          return map.get(node);
+      return false;
+  }
+}
+</code></pre>
+<h5 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h5></li>
+<li><p>字符串比较的正确打开方式自然就是动态规划了，唉～</p>
+<pre><code class="java">class Solution {
+
+  public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
+      int length = s.length();
+      //dp用来记录到dp[i]为止是否符合条件
+      boolean dp[] = new boolean[length + 1];
+      //dp[0]可以理解为空字符串肯定符合条件
+      dp[0] = true;
+      for (int i = 1; i &lt;= length; i++) {
+          //假如dp[j]符合条件，且s[j,i)也符合条件，那么dp[i]也是符合条件的
+          for (int j = 0; j &lt; i; j++) {
+              String temp = s.substring(j, i);
+              if (dp[j] &amp;&amp; wordDict.contains(temp)) {
+                  dp[i] = true;
+                  break;
+              }
+          }
       }
-      Node clone = new Node(node.val, new ArrayList&lt;&gt;());
-      map.put(node, clone);
-      for (Node n: node.neighbors) {
-          Node temp = cloneGraph(n);
-          clone.neighbors.add(temp);
-      }
-      return clone;
+      return dp[length];
   }
 }
 </code></pre>
@@ -427,9 +453,9 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://tlzxsun.github.io">Matteo</a>
-            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-133-Clone-Graph/">http://tlzxsun.github.io/2019/05/17/LeetCode-133-Clone-Graph/</a>
-            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-133-Clone-Graph/">May 17th 2019, 3:58:05 pm</a>
-            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/17/LeetCode-133-Clone-Graph/">May 17th 2019, 3:58:05 pm</a>
+            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/23/LeetCode-139-Word-Break/">http://tlzxsun.github.io/2019/05/23/LeetCode-139-Word-Break/</a>
+            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/23/LeetCode-139-Word-Break/">May 23rd 2019, 7:37:24 pm</a>
+            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/23/LeetCode-139-Word-Break/">May 23rd 2019, 7:37:25 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -437,17 +463,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/17/LeetCode-134-Gas-Station-1/" title="LeetCode.134 Gas Station">
-                    <div class="nextTitle">LeetCode.134 Gas Station</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/" title="LeetCode.132 Palindrome Partitioning II">
-                    <div class="prevTitle">LeetCode.132 Palindrome Partitioning II</div>
+                <a href="/2019/05/22/LeetCode-135-Candy/" title="LeetCode.135 Candy">
+                    <div class="prevTitle">LeetCode.135 Candy</div>
                 </a>
             
         </li>
@@ -566,7 +587,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解法"><span class="toc-number">2.</span> <span class="toc-text">解法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#TLE解法"><span class="toc-number">2.</span> <span class="toc-text">TLE解法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正确解法"><span class="toc-number">3.</span> <span class="toc-text">正确解法</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
