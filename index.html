@@ -359,6 +359,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-143-Reorder-List/">
+            
+                <span>LeetCode.143 Reorder List</span>
+        </a>
+        <div class="abstract-content">
+            题意
+https://leetcode.com/problems/reorder-list/
+给链表重新排序，顺序变为L0→Ln→L1→Ln-1→L2→Ln-2→…笨办法
+每次找到最后一个节点，并断开最后一个节点与上一个节点连接，使第一个节点指向最后一个节点，最后一个节点指向第一个节点的原next节点。虽然能AC但是极慢
+class Solution {
+  public void reorderList(ListNode head) {
+      if (head == null || head.next == null) {
+          return;
+      }
+  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">
             
                 <span>LeetCode.140 Word Break II</span>
@@ -633,36 +665,6 @@ AC解class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-130-Surrounded-Regions-1/">
-            
-                <span>LeetCode.130 Surrounded Regions</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/surrounded-regions/
-思路
-一开始想的是顺序找到第一个位置然后找出路，这样的话太复杂，需要记下路径判断该路径能否突围
-后面反着想就是从四个边开始找注定能突围的位置，然后向四个位置查找，只要是连通的肯定能突围，后续计算量会小很多
-写完AC后发现时间差很多，去查看了100%的答案，发现思路完成一样，于是一句句改提交为什么会慢这么多，最后发现是因为我用System.out.println()打印日志导致的😂
-
-解法class Solution {
-    public void solve(char[][] boa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
             </div>
             <!-- tags  -->
             
@@ -1124,9 +1126,34 @@ AC解class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 24
+        Total : 25
         </div>
         <!-- search  -->
         
@@ -1139,6 +1166,11 @@ AC解class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-143-Reorder-List/">LeetCode.143 Reorder List</a>
+        </li>
     
     
         <li class="archive-post-item">

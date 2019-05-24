@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LeetCode.135 Single Number · matteo&#39;s</title>
+    <title>LeetCode.143 Reorder List · matteo&#39;s</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">matteo&#39;s coding field.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">LeetCode.135 Single Number</a>
+                <a href="#" class="post-name">LeetCode.143 Reorder List</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            LeetCode.135 Single Number
+            LeetCode.143 Reorder List
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">313</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">448</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/20</span>
+                    <span class="post-intro-time">2019/05/24</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -396,21 +396,86 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h5 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h5><ul>
-<li>一次循环找出数组中唯一一个只出现一次的数字</li>
-<li>直接放别人的解吧，好精妙<a href="https://blog.csdn.net/Cloudox_/article/details/52459584" target="_blank" rel="noopener">https://blog.csdn.net/Cloudox_/article/details/52459584</a> <pre><code class="java">public int singleNumber(int[] nums) {
-      int result = 0;
-      for(int i=0;i&lt;nums.length;i++) result ^= nums[i];
-      return result;
+<li><a href="https://leetcode.com/problems/reorder-list/" target="_blank" rel="noopener">https://leetcode.com/problems/reorder-list/</a></li>
+<li>给链表重新排序，顺序变为L0→Ln→L1→Ln-1→L2→Ln-2→…<h5 id="笨办法"><a href="#笨办法" class="headerlink" title="笨办法"></a>笨办法</h5></li>
+<li><p>每次找到最后一个节点，并断开最后一个节点与上一个节点连接，使第一个节点指向最后一个节点，最后一个节点指向第一个节点的原next节点。虽然能AC但是极慢</p>
+<pre><code class="java">class Solution {
+  public void reorderList(ListNode head) {
+      if (head == null || head.next == null) {
+          return;
+      }
+      ListNode tmp;
+      //head不为null，且节点数大于2
+      while (head != null &amp;&amp; head != (tmp = findLast(head))) {
+          //最后一个结点指向head.next
+          tmp.next = head.next;
+          //head.next指向找到的最后一个节点
+          head.next = tmp;
+          //head变为head.next
+          head = tmp.next;
+      }
+  }
+
+  //找到head打头的最后一个结点
+  ListNode findLast(ListNode head) {
+      if (head.next == null) {
+          return head;
+      }
+      while (true) {
+          if (head.next != null &amp;&amp; head.next.next == null) {
+              ListNode find =  head.next;
+              //断开上一个节点的连接
+              head.next = null;
+              return find;
+          } else {
+              head = head.next;
+          }
+      }
+  }
 }
 </code></pre>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><blockquote>
-<p>四行代码就解决了，我们看看它做了什么，先设定一个0，然后循环和数组中的每个数去做异或运算，每次得出的结果都继续和下一个数再异或。最后得出来的结果就是单个的那个数了！为什么？我演算了一下希望找到规律，发现确实如此。因为异或这个运算有三个很重要的特性：</p>
-<ol>
-<li>两个相同的数异或后为0；</li>
-<li>0和一个数异或后为那个数；</li>
-<li>异或运算满足交换律。<br>那么我们用0去依次和数组中的数进行异或，结果再继续和下一个数异或，一遍下来，每个数字都异或到了，交换律一遍，就是让每两个相同的数字都自己跟自己异或，结果都是0，然后0和那个单独的数字异或，结果就是那个单独的数字！拍案叫绝！ </li>
-</ol>
+<h5 id="好解法"><a href="#好解法" class="headerlink" title="好解法"></a>好解法</h5><blockquote>
+<p>先使用快慢指针将链表从中间分割成两段，然后后半段就地逆置．之后合并插入到前半段链表即可，时间复杂度O(n)。<br><a href="https://blog.csdn.net/qq508618087/article/details/50480251" target="_blank" rel="noopener">https://blog.csdn.net/qq508618087/article/details/50480251</a><br><code>`</code>java<br>class Solution {<br>  public void reorderList(ListNode head) {</p>
+<pre><code>  if (head == null || head.next == null) {
+      return;
+  }
+  //快慢指针，慢指针最终指向((n - 1)/2)
+  ListNode fast = head, slow = head;
+  while (fast.next != null &amp;&amp; fast.next.next != null) {
+      fast = fast.next.next;
+      slow = slow.next;
+  }
+  //快指针指向后半部分
+  fast = slow.next;
+  //断开前后部分连接
+  slow.next = null;
+  //慢指针指向head
+  slow = head;
+  //反转后半部分
+  fast = reverse(fast);
+  while (fast != null &amp;&amp; slow != null) {
+      ListNode tf = fast.next, ts = slow.next;
+      //快指针next指向慢指针的next
+      fast.next = slow.next;
+      //慢指针next指向快指针
+      slow.next = fast;
+      fast = tf;
+      slow = ts;
+  }
+</code></pre><p>  }</p>
 </blockquote>
+<p>  ListNode reverse(ListNode head) {</p>
+<pre><code>  ListNode pre = head, cur = head.next, tmp;
+  while (cur != null) {
+      tmp = cur.next;
+      cur.next = pre;
+
+      pre = cur;
+      cur = tmp;
+  }
+  head.next = null;
+  return pre;
+</code></pre><p>  }<br>}<br><code>`</code></p>
 </li>
 </ul>
 
@@ -419,9 +484,9 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://tlzxsun.github.io">Matteo</a>
-            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/20/LeetCode-135-Single-Number/">http://tlzxsun.github.io/2019/05/20/LeetCode-135-Single-Number/</a>
-            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/20/LeetCode-135-Single-Number/">May 20th 2019, 9:16:00 am</a>
-            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/20/LeetCode-135-Single-Number/">May 24th 2019, 5:41:02 pm</a>
+            </p><p>原文链接：<a href="http://tlzxsun.github.io/2019/05/24/LeetCode-143-Reorder-List/">http://tlzxsun.github.io/2019/05/24/LeetCode-143-Reorder-List/</a>
+            </p><p>发表日期：<a href="http://tlzxsun.github.io/2019/05/24/LeetCode-143-Reorder-List/">May 24th 2019, 5:38:00 pm</a>
+            </p><p>更新日期：<a href="http://tlzxsun.github.io/2019/05/24/LeetCode-143-Reorder-List/">May 24th 2019, 5:39:23 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -429,17 +494,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/20/LeetCode-138/" title="LeetCode.138 Copy List with Random Pointer  ">
-                    <div class="nextTitle">LeetCode.138 Copy List with Random Pointer  </div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/05/17/LeetCode-134-Gas-Station-1/" title="LeetCode.134 Gas Station">
-                    <div class="prevTitle">LeetCode.134 Gas Station</div>
+                <a href="/2019/05/24/LeetCode-140-Word-Break-II/" title="LeetCode.140 Word Break II">
+                    <div class="prevTitle">LeetCode.140 Word Break II</div>
                 </a>
             
         </li>
@@ -558,7 +618,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解释"><span class="toc-number">2.</span> <span class="toc-text">解释</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#笨办法"><span class="toc-number">2.</span> <span class="toc-text">笨办法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#好解法"><span class="toc-number">3.</span> <span class="toc-text">好解法</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
