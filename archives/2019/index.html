@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">
+            
+                <span>LeetCode.140 Word Break II</span>
+        </a>
+        <div class="abstract-content">
+            题意
+给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用，并输出所有解思路
+一开始想着跟上一题一样的解法，DP然后记录所有解，但是想想要输出所有解，递归应该可以，很意外的还是TLE了😫
+class Solution {
+
+  List&lt;String&gt; results = new ArrayList&lt;&gt;();
+  List&lt;String&gt; result = new ArrayList&lt;&gt;();
+
+  public List&lt;String&gt; wordBreak(String s, L...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/23/LeetCode-139-Word-Break/">
             
                 <span>LeetCode.139 Word Break</span>
@@ -614,40 +645,6 @@ AC解class Solution {
 
 解法class Solution {
     public void solve(char[][] boa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
-            
-                <span>LeetCode.126 Word Ladder II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/word-ladder-ii/
-思路
-这题可能用126的解法，区别在于这题需要记下所有的最短解，作下面几点修改
-queue中需要记下完整路径，每一层往queue中增加最短解的时候需要在新增list里增加当前word
-每一层中前面使用的word也能用于后面的情况，但是后面层不会出现该层及之前使用的word，因为广度优先搜索，每个word第一次出现的肯定是最短路
-当某一层中找到解之后，该层遍历结束后即结束寻找
-
-
-虽然很慢，但还是AC了，后续再看找更优解法
-
-解法class Solution {
-    public List&lt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1025,9 +1022,24 @@ queue中需要记下完整路径，每一层往queue中增加最短解的时候�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -1040,6 +1052,11 @@ queue中需要记下完整路径，每一层往queue中增加最短解的时候�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">LeetCode.140 Word Break II</a>
+        </li>
     
     
         <li class="archive-post-item">

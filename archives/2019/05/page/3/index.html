@@ -346,6 +346,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/13/LeetCode-72-Edit-Distance/">
+            
+                <span>LeetCode.72 Edit Distance</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/edit-distance/
+
+这一题没做出来，参考的别人的答案😞
+使用dis[i][j]记录匹配到i,j位置里的最短距离
+边界情况dis[0][i]和dis[0][j]，即words1, words2一方为空串，可知距离为另一方长度
+当words[i]==words[j]， 则dis[i][j]=dis[i-1][j-1]
+当words[i]!=words[j-1]，则有下面三种情况，取最小值
+words1插入，dis[i][j]=dis[i][j-1]+1
+words1删除，dis[i][j]=dis[i-1][j]+1
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/10/LeetCode-44-Wildcard-Matching/">
             
                 <span>LeetCode.44 Wildcard Matching</span>
@@ -839,9 +871,24 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -854,6 +901,11 @@ Run server$ hexo se...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">LeetCode.140 Word Break II</a>
+        </li>
     
     
         <li class="archive-post-item">
