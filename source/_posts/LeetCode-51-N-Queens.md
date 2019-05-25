@@ -1,7 +1,9 @@
 title: LeetCode.51 N Queens
 author: Matteo
-date: 2019-05-13 14:50:59
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-13 14:50:00
 ---
 [https://leetcode.com/problems/n-queens/](https://leetcode.com/problems/n-queens/)
 * 经典N皇后问题，先背一个解法吧，具体见注释

@@ -1,7 +1,8 @@
 title: LeetCode.42 Trapping Rain Water
 author: Matteo
 tags: []
-categories: []
+categories:
+  - LeetCode
 date: 2019-05-10 15:47:00
 ---
 [https://leetcode.com/problems/trapping-rain-water/](https://leetcode.com/problems/trapping-rain-water/)

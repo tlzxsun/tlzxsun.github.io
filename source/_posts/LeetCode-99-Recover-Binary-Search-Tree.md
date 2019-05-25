@@ -1,7 +1,9 @@
 title: LeetCode.99 Recover Binary Search Tree
 author: Matteo
-date: 2019-05-13 18:30:36
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-13 18:30:00
 ---
 [https://leetcode.com/problems/recover-binary-search-tree/](https://leetcode.com/problems/recover-binary-search-tree/)
 * 二叉搜索树中序遍历(In-Order Traversal)必定有序

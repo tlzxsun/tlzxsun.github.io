@@ -1,7 +1,8 @@
 title: LeetCode.115 Distinct Distances
 author: Matteo
-date: 2019-05-14 14:29:59
-tags:
+tags: []
+categories: []
+date: 2019-05-14 14:29:00
 ---
 [https://leetcode.com/problems/distinct-subsequences/](https://leetcode.com/problems/distinct-subsequences/)
 * 开始时候想着递归做，后来想想肯定会超时，就放弃了。昨天刚做了八皇后问题，感觉跟这个比较像，先定确定一个位置，再继续向后查找，直到找到一个解。找到解后再回溯，写出来发现还是超时😞

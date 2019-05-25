@@ -1,7 +1,9 @@
 title: LeetCode.72 Edit Distance
 author: Matteo
-date: 2019-05-13 11:38:49
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-13 11:38:00
 ---
 [https://leetcode.com/problems/edit-distance/](https://leetcode.com/problems/edit-distance/)
 * 这一题没做出来，参考的别人的答案😞

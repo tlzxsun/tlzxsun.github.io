@@ -1,7 +1,9 @@
 title: LeetCode.127 Word Ladder
 author: Matteo
-date: 2019-05-16 16:10:36
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-16 16:10:00
 ---
 [https://leetcode.com/problems/word-ladder/](https://leetcode.com/problems/word-ladder/)
 ##### 思路

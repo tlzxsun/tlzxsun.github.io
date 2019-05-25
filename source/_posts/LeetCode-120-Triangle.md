@@ -1,7 +1,9 @@
 title: LeetCode.120 Triangle
 author: Matteo
-date: 2019-05-15 11:08:02
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-15 11:08:00
 ---
 [https://leetcode.com/problems/triangle/](https://leetcode.com/problems/triangle/)
 ##### 思路

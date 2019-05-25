@@ -1,7 +1,9 @@
 title: LeetCode.123 Best Time to Buy and Sell Stock III
 author: Matteo
-date: 2019-05-15 18:27:28
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-15 18:27:00
 ---
 [https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 ##### 思路

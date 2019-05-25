@@ -1,7 +1,9 @@
 title: LeetCode.126 Word Ladder II
 author: Matteo
-date: 2019-05-16 18:31:03
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-16 18:31:00
 ---
 [https://leetcode.com/problems/word-ladder-ii/](https://leetcode.com/problems/word-ladder-ii/)
 ##### 思路

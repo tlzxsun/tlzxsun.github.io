@@ -1,7 +1,9 @@
 title: LeetCode.131 Palindrome Partitioning
 author: Matteo
-date: 2019-05-17 10:02:46
-tags:
+tags: []
+categories:
+  - LeetCode
+date: 2019-05-17 10:02:00
 ---
 [https://leetcode.com/problems/palindrome-partitioning/](https://leetcode.com/problems/palindrome-partitioning/)
 ##### 题意
