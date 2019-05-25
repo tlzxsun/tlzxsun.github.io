@@ -346,6 +346,70 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-130-Surrounded-Regions-1/">
+            
+                <span>LeetCode.130 Surrounded Regions</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/surrounded-regions/
+思路
+一开始想的是顺序找到第一个位置然后找出路，这样的话太复杂，需要记下路径判断该路径能否突围
+后面反着想就是从四个边开始找注定能突围的位置，然后向四个位置查找，只要是连通的肯定能突围，后续计算量会小很多
+写完AC后发现时间差很多，去查看了100%的答案，发现思路完成一样，于是一句句改提交为什么会慢这么多，最后发现是因为我用System.out.println()打印日志导致的😂
+
+解法class Solution {
+    public void solve(char[][] boa...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
+            
+                <span>LeetCode.126 Word Ladder II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/word-ladder-ii/
+思路
+这题可能用126的解法，区别在于这题需要记下所有的最短解，作下面几点修改
+queue中需要记下完整路径，每一层往queue中增加最短解的时候需要在新增list里增加当前word
+每一层中前面使用的word也能用于后面的情况，但是后面层不会出现该层及之前使用的word，因为广度优先搜索，每个word第一次出现的肯定是最短路
+当某一层中找到解之后，该层遍历结束后即结束寻找
+
+
+虽然很慢，但还是AC了，后续再看找更优解法
+
+解法class Solution {
+    public List&lt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">
             
                 <span>LeetCode.127 Word Ladder</span>
@@ -1037,9 +1101,95 @@ T
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1052,6 +1202,36 @@ T
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-152-Maximum-Product-Subarray/">LeetCode.152 Maximum Product Subarray</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-150-Evaluate-Reverse-Polish-Notation/">LeetCode.150 Evaluate Reverse Polish Notation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-148-Sort-List/">LeetCode.148 Sort List</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">LeetCode.147 Insertion Sort List</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">LeetCode.145 Binary Tree Postorder Traversal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-144-Binary-Tree-Preorder-Traversal/">LeetCode.144 Binary Tree Preorder Traversal</a>
+        </li>
     
     
         <li class="archive-post-item">

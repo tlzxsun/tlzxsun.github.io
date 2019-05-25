@@ -346,6 +346,198 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-120-Triangle/">
+            
+                <span>LeetCode.120 Triangle</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/triangle/
+思路
+一开始想到用递归，写的真是优美简洁，然并卵～～一个TLE糊脸
+class Solution {
+
+ int min = Integer.MAX_VALUE;
+
+ public int minimumTotal(List&lt;List&lt;Integer&gt;&gt; triangle) {
+     search(triangle, 0, 0, 0);
+     return min;
+ }
+
+ void search(List&lt;List&lt;Integer&gt;&gt; triangl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-118-Pascal-s-Triangle/">
+            
+                <span>LeetCode.118 Pascal&#39;s Triangle</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/pascals-triangle/
+思路
+开始想的是直接递归解决，提交后发现TLE，于是采用HashMap记录中间状态，能够AC
+class Solution {
+
+ HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; map = new HashMap&lt;&gt;();
+ List&lt;List&lt;Integer&gt;&gt; results = new ArrayList&lt;&gt;();
+ public List&lt;List&lt;Intege...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">
+            
+                <span>LeetCode.117 Populating Next Right Pointers in Each Node II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+题意
+这一题与116的区别就在于这一题不是满二叉树，所以下一行的起点不是第一个节点的左结点，因此不能用116中的解法。最笨的办法就是用116的方法先层次遍历将每一个结点的next指向下一个遍历到的，然后再右序遍历将最右边结点的next清空，时间复杂度为O(2n)，空间复杂度为O(n)，这样也能AC😂
+
+class Solution {
+
+    //上一个遍历的元素
+    Node last;
+
+    public Node c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
+            
+                <span>LeetCode.116 Populating Next Right </span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
+这题一开始想着使用按层遍历，但是不知道怎么遍历☹️，经查阅后得知使用LinkedList实现。
+给root的next增加一个特殊标签，当取到next为标签时，说明这个元素是每行第一个，并给它的右结点增加标签，因为右结点是下一层第一个遍历的(满二叉树才行)
+AC代码
+class Solution {
+
+  //上一个遍历的元素
+  Node last;
+  //第一行起始结点的特殊标签
+  Node mark = new Node();
+
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/14/LeetCode-115-Distinct-Distances/">
+            
+                <span>LeetCode.115 Distinct Distances</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/distinct-subsequences/
+
+开始时候想着递归做，后来想想肯定会超时，就放弃了。昨天刚做了八皇后问题，感觉跟这个比较像，先定确定一个位置，再继续向后查找，直到找到一个解。找到解后再回溯，写出来发现还是超时😞
+先贴下超时的解
+class Solution {
+  public int numDistinct(String s, String t) {
+      int count = 0;
+      //标记s和t的查找位置
+      int sIndex = 0, tIndex = 0;
+      L...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/13/LeetCode-99-Recover-Binary-Search-Tree/">
+            
+                <span>LeetCode.99 Recover Binary Search Tree</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/recover-binary-search-tree/
+
+二叉搜索树中序遍历(In-Order Traversal)必定有序
+
+
+先来看一个naive的方法，即使用O(n)的空间复杂度应该怎么解决．我们可以开一个数组，中序遍历树，并将其依次保存在数组中．如果是一个正常的二叉搜索树将会是完全有序的．然而当交换了其中两个结点之后就会出现两个结点出现在错误的位置．举个栗子：[1, 2, 3, 4, 5, 6]，这是一个正常的二叉搜索数的序列，当交换了其中两个结点之后变成了[1, 5, 3, 4, 2, 6]．那么如何找到这两个交换的结...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/13/LeetCode-51-N-Queens/">
             
                 <span>LeetCode.51 N Queens</span>
@@ -511,37 +703,10 @@ T
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/10/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server$ hexo se...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span>
+        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="extend next" rel="next" href="/archives/2019/page/4/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -944,9 +1109,95 @@ Run server$ hexo se...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -959,6 +1210,36 @@ Run server$ hexo se...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-152-Maximum-Product-Subarray/">LeetCode.152 Maximum Product Subarray</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-150-Evaluate-Reverse-Polish-Notation/">LeetCode.150 Evaluate Reverse Polish Notation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/2019/05/25/LeetCode-148-Sort-List/">LeetCode.148 Sort List</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">LeetCode.147 Insertion Sort List</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">LeetCode.145 Binary Tree Postorder Traversal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span><a class="archive-post-title" href="/2019/05/24/LeetCode-144-Binary-Tree-Preorder-Traversal/">LeetCode.144 Binary Tree Preorder Traversal</a>
+        </li>
     
     
         <li class="archive-post-item">
