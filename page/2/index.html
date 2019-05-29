@@ -359,6 +359,297 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/25/LeetCode-150-Evaluate-Reverse-Polish-Notation/">
+            
+                <span>LeetCode.150 Evaluate Reverse Polish Notation</span>
+        </a>
+        <div class="abstract-content">
+            题意
+计算逆波兰法表示的算式解法
+遇到数字存入栈，遇到符号则出栈两个数字，并将结果入栈
+class Solution {
+
+  Stack&lt;Integer&gt; integers = new Stack&lt;&gt;();
+
+  public int evalRPN(String[] tokens) {
+      for(String token: tokens) {
+          if (&quot;+&quot;.equals(token)) {
+              int n2 = integers.pop(), n1 = integers.pop();
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/25/LeetCode-148-Sort-List/">
+            
+                <span>LeetCode.148 Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/sort-list/
+题意
+不借助额外空间对链表进行排序解法
+先使用快慢指针将链表分为前后两部分，分别对两部分排序，最后对排序好的两个链表进行合并
+class Solution {
+  public ListNode sortList(ListNode head) {
+      //当head为null或仅剩head的时候直接返回
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode fast =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">
+            
+                <span>LeetCode.147 Insertion Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/insertion-sort-list/
+题意
+使用插入排序对链表进行排序笨办法
+每次找错序的节点，断开该节点后从头开始查找合适位置并插入，能AC但是非常慢class Solution {
+  public ListNode insertionSortList(ListNode head) {
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode cur = head;
+      //是否查找到最...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">
+            
+                <span>LeetCode.145 Binary Tree Postorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/binary-tree-postorder-traversal/
+题意
+后序遍历树，非递归实现，基本跟144一致，只是最后结果需要reverse一下，但是速度比较慢
+class Solution {
+
+  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
+  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
+  public List&lt;Integer&gt; postorderTraversal(TreeNod...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-144-Binary-Tree-Preorder-Traversal/">
+            
+                <span>LeetCode.144 Binary Tree Preorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/binary-tree-preorder-traversal/
+题意
+二叉树前序遍历，递归的比较简单，非递归实现需要用栈存节点
+class Solution {
+
+  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
+  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
+  public List&lt;Integer&gt; preorderTraversal(TreeNode root) {
+      if (...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-143-Reorder-List/">
+            
+                <span>LeetCode.143 Reorder List</span>
+        </a>
+        <div class="abstract-content">
+            题意
+https://leetcode.com/problems/reorder-list/
+给链表重新排序，顺序变为L0→Ln→L1→Ln-1→L2→Ln-2→…笨办法
+每次找到最后一个节点，并断开最后一个节点与上一个节点连接，使第一个节点指向最后一个节点，最后一个节点指向第一个节点的原next节点。虽然能AC但是极慢
+class Solution {
+  public void reorderList(ListNode head) {
+      if (head == null || head.next == null) {
+          return;
+      }
+  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">
+            
+                <span>LeetCode.140 Word Break II</span>
+        </a>
+        <div class="abstract-content">
+            题意
+给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用，并输出所有解思路
+一开始想着跟上一题一样的解法，DP然后记录所有解，但是想想要输出所有解，递归应该可以，很意外的还是TLE了😫
+class Solution {
+
+  List&lt;String&gt; results = new ArrayList&lt;&gt;();
+  List&lt;String&gt; result = new ArrayList&lt;&gt;();
+
+  public List&lt;String&gt; wordBreak(String s, L...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/23/LeetCode-139-Word-Break/">
+            
+                <span>LeetCode.139 Word Break</span>
+        </a>
+        <div class="abstract-content">
+            题意
+给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用TLE解法
+TLE的自然是递归了😩
+class Solution {
+  Set&lt;String&gt; used = new HashSet&lt;&gt;();
+
+  public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
+      return search(s, wordDict, 0);
+  }
+
+  boolean search(String s, List&lt;String&gt; wo...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/22/LeetCode-135-Candy/">
+            
+                <span>LeetCode.135 Candy</span>
+        </a>
+        <div class="abstract-content">
+            题意给一个数组代表权重，给数组每一个元素赋值，值最小为1，且相邻的元素权重大的值必须大于权重小的
+分析
+直接给第一个元素赋值1，然后依次比较，有三种情况
+
+
+ratings[i] &gt; ratings[i - 1]，则当前值为前一个的值加1
+ratings[i] == ratings[i - 1]，则当前值为1
+ratings[i] &lt; ratings[i - 1]，刚当前值为1，这时候需要处理前一个值也为1的情况，需要往前遍历，将ratings[i - 1]加1
+
+
+这个解法能AC，但是非常慢
+class Solution {
+  public int candy(int[]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/20/LeetCode-138/">
             
                 <span>LeetCode.138 Copy List with Random Pointer  </span>
@@ -381,280 +672,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/LeetCode-135-Single-Number/">
-            
-                <span>LeetCode.135 Single Number</span>
-        </a>
-        <div class="abstract-content">
-            题意
-一次循环找出数组中唯一一个只出现一次的数字
-直接放别人的解吧，好精妙https://blog.csdn.net/Cloudox_/article/details/52459584 public int singleNumber(int[] nums) {
-      int result = 0;
-      for(int i=0;i&lt;nums.length;i++) result ^= nums[i];
-      return result;
-}
-
-解释
-四行代码就解决了，我们看看它做了什么，先设定一个0，然后循环和数组中的每个数去做异或运算，每次得出的结果都继续和下一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">
-            
-                <span>LeetCode.134 Gas Station</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/gas-station/submissions/
-思路1 
-算出每个station出发之后剩余的gas，保存在数组中
-从数组中找出剩余gas不小于0的位置，然后从该位置开始查询，走回原点或者gas小于0退出循环
-这个解法能AC，但是非常慢，继续想
-
-
-AC解class Solution {
-  public int canCompleteCircuit(int[] gas, int[] cost) {
-      int gasLeft[] = new int[gas.length];
-      for (int i = 0...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">
-            
-                <span>LeetCode.133 Clone Graph</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/clone-graph/
-思路
-头昏眼花想不出任何方法，看了别人思路发现好简单
-1、广度优先遍历(BFS)2、深度优先遍历(DFS)2.1、递归2.2、非递归https://www.cnblogs.com/ganganloveu/p/4119462.html
-
-解法class Solution {
-  HashMap&lt;Node, Node&gt; map = new HashMap&lt;&gt;();
-  public Node cloneGraph(Node node) {
-      if (node == null...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">
-            
-                <span>LeetCode.132 Palindrome Partitioning II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/palindrome-partitioning-ii/
-题意
-找出将字符串分割成回文子串的最少分割数思路
-开始想着用131的dfs，因为131没有TLE，提交之后果然还是TLE了，131因为要输出所有的分割，所以没有类似”ababababababababababababcbabababababababababababa”这样的测试用例。
-后来想用动态规划做，但是没有想出来怎么做，后来参考的别人的思路。但是第二次的DP是自己想出来的，第一次的解法很精妙，没想出来～
-(动态规划) O(n2)O(n2)一共进行两次动态规划。第一次动规...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-131-Palindrome-Partitioning/">
-            
-                <span>LeetCode.131 Palindrome Partitioning</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/palindrome-partitioning/
-题意
-取出所有的回文子串，想到的就是dfs，开始想着可能会超时，后来写出来了发现并没有
-解法class Solution {
-  Stack&lt;String&gt; stack = new Stack&lt;&gt;();
-  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
-  public List&lt;List&lt;String&gt;&gt; partition(String s) ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-130-Surrounded-Regions-1/">
-            
-                <span>LeetCode.130 Surrounded Regions</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/surrounded-regions/
-思路
-一开始想的是顺序找到第一个位置然后找出路，这样的话太复杂，需要记下路径判断该路径能否突围
-后面反着想就是从四个边开始找注定能突围的位置，然后向四个位置查找，只要是连通的肯定能突围，后续计算量会小很多
-写完AC后发现时间差很多，去查看了100%的答案，发现思路完成一样，于是一句句改提交为什么会慢这么多，最后发现是因为我用System.out.println()打印日志导致的😂
-
-解法class Solution {
-    public void solve(char[][] boa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
-            
-                <span>LeetCode.126 Word Ladder II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/word-ladder-ii/
-思路
-这题可能用126的解法，区别在于这题需要记下所有的最短解，作下面几点修改
-queue中需要记下完整路径，每一层往queue中增加最短解的时候需要在新增list里增加当前word
-每一层中前面使用的word也能用于后面的情况，但是后面层不会出现该层及之前使用的word，因为广度优先搜索，每个word第一次出现的肯定是最短路
-当某一层中找到解之后，该层遍历结束后即结束寻找
-
-
-虽然很慢，但还是AC了，后续再看找更优解法
-
-解法class Solution {
-    public List&lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">
-            
-                <span>LeetCode.127 Word Ladder</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/word-ladder/
-思路
-开始用dfs递归，不出所望超时了，后来想着用动态规划，做了一上午没有一点头绪。算法实在太难了，真心不适合我😭
-因为要求最短路径，如果我们用深度优先搜索的话必须遍历所有的路径才能确定哪个是最短的，而用广度优先搜索的话，一旦搜到目标就可以提前终止了，而且根据广度优先的性质，我们肯定是先通过较短的路径搜到目标。另外，为了避免产生环路和重复计算，我们找到一个存在于字典的新的词时，就要把它从字典中移去。这么做是因为根据广度优先，我们第一次发现词A的路径一定是从初始词到词A最短的路径，对于其他可能再经过词A...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
-            
-                <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-思路
-暴力解法就是在121的基础上加个二分计算，能AC但是需要447ms，时间复杂度O(2$n^2$)
-class Solution {
-
- public int maxProfit(int[] prices, int start, int end) {
-     int min = Integer.MAX_VALUE, max = 0;
-     for (int i = start; i &lt; end; i++) {
-         //记录到截...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
             </div>
             <!-- tags  -->
             
@@ -1227,9 +1244,170 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 31
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1242,6 +1420,51 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/29</span><a class="archive-post-title" href="/2019/05/29/LeetCode-199-Binary-Tree-Right-Side-View/">LeetCode.199 Binary Tree Right Side View</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/29</span><a class="archive-post-title" href="/2019/05/29/LeetCode-337-House-Robber-III/">LeetCode.337 House Robber III</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/29</span><a class="archive-post-title" href="/2019/05/29/LeetCode-213-House-Robber-II/">LeetCode.213 House Robber II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/29</span><a class="archive-post-title" href="/2019/05/29/LeetCode-198-House-Robber/">LeetCode.198 House Robber</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/29</span><a class="archive-post-title" href="/2019/05/29/LeetCode-190-Reverse-Bits/">LeetCode.190 Reverse Bits</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/2019/05/28/LeetCode-179-Largest-Number/">LeetCode.179 Largest Number</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/2019/05/28/LeetCode-174-Dungeon-Game/">LeetCode.174 Dungeon Game</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href="/2019/05/27/LeetCode-169-Majority-Element/">LeetCode.169 Majority Element</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href="/2019/05/27/LeetCode-166-Fraction-to-Recurring-Decimal/">LeetCode.166 Fraction to Recurring Decimal</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1310,12 +1533,12 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
