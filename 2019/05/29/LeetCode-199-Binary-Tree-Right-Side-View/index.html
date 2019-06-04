@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Matteo">
     <meta name="renderer" content="webkit">
@@ -198,7 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -206,7 +206,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -400,7 +400,7 @@ height:50vh;
 <li>按层次输出二叉树最右结点<h5 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h5></li>
 </ul>
 <ol>
-<li>BFS<br>按层次遍历BFS一般用queue作为辅助，先将根结点入列，然后依次出列，每次将出列结点的左右结点再加入队列。这里需要记下最右结点，需要做一个调整，普通遍历的时候并没有区分层次。这里需要每次while循环时记下当前结点数量个数，然后将当前所有结点出列，并将左右结点入列，每次while循环时的结点数量就是该层的数量，将该层第一个结点加入结果即可。<pre><code class="java">class Solution {
+<li>BFS<br>按层次遍历BFS一般用queue作为辅助，先将根结点入列，然后依次出列，每次将出列结点的左右结点再加入队列。这里需要记下最右结点，需要做一个调整，普通遍历的时候并没有区分层次。这里需要每次while循环时记下当前结点数量个数，然后将当前所有结点出列，并将左右结点入列，每次while循环时的结点数量就是该层的数量，将该层第一个结点加入结果即可。<pre><code class="lang-java">class Solution {
  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
  public List&lt;Integer&gt; rightSideView(TreeNode root) {
      if (root == null) {
@@ -429,7 +429,7 @@ height:50vh;
 </code></pre>
 </li>
 <li><p>DFS<br>递归求解，先遍历右子树再遍历左子树，遍历时传入当前的层次，之前的做法是用一个set来保存每一层是否被遍历过。网上看到更巧妙的办法只需要判断当前层次是否跟结果集的size一致，因为每次遍历到新的一层的时候，结果集中只有之前层的结果，level刚好跟size一致。</p>
-<pre><code class="java">class Solution {
+<pre><code class="lang-java">class Solution {
  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
  public List&lt;Integer&gt; rightSideView(TreeNode root) {
      traversal(root, 0);
@@ -464,6 +464,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/05/30/LeetCode-200-Number-of-Islands/" title="LeetCode.200 Number of Islands">
+                    <div class="nextTitle">LeetCode.200 Number of Islands</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1154,9 +1159,139 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1169,6 +1304,46 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">LeetCode.229 Majority Element II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">LeetCode.224 Basic Calculator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">LeetCode.223 Rectangle Area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">LeetCode.206 Course Schedule</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">LeetCode.209 Minimum Size Subarray Sum</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">LeetCode.201 Bitwise AND of Numbers Range</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">如何在 hexo 中支持 Mathjax？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">LeetCode.200 Number of Islands</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1282,12 +1457,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
@@ -1445,7 +1620,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

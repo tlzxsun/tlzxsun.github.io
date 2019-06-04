@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Matteo">
     <meta name="renderer" content="webkit">
@@ -198,7 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -206,7 +206,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -402,7 +402,7 @@ height:50vh;
 <blockquote>
 <p>先来看一个naive的方法，即使用O(n)的空间复杂度应该怎么解决．<br>我们可以开一个数组，中序遍历树，并将其依次保存在数组中．如果是一个正常的二叉搜索树将会是完全有序的．然而当交换了其中两个结点之后就会出现两个结点出现在错误的位置．举个栗子：[1, 2, 3, 4, 5, 6]，这是一个正常的二叉搜索数的序列，当交换了其中两个结点之后变成了[1, 5, 3, 4, 2, 6]．<br>那么如何找到这两个交换的结点呢？我们知道如果一个大的数移到了前面，他必然会比他后面的一个数大，也就是说当我们遍历数组的时候碰到的第一个比后面结点大的结点就是被交换过来的大的结点．那么交换到后面的小的结点也可以用同样的道理找到，即这个小的结点必然比前面一个结点小，但是如果交换的两个结点不是相邻结点的话会有两个结点比前面结点小，因为大的结点交换到前面来他必然比后面一个结点大，然后真正的交换过去的小的结点也会比前面的小．所以我们要找到的是最后一个比前面结点小的结点．<br>有了上面的理论我们就可以很容易的在数组中找到两个失序的结点了．然后将其值交换就可以了．<br>好了，既然我们已经知道了使用O(n)空间复杂度的算法了，我们就可以不用将结点保存下来了，因为我们可以直接用中序遍历直接找到这两个结点，但是我们需要一个另外的标记，即当前结点的前一个结点，这样就可以还原上面的算法了．<br><a href="https://blog.csdn.net/qq508618087/article/details/50516683" target="_blank" rel="noopener">https://blog.csdn.net/qq508618087/article/details/50516683</a></p>
 </blockquote>
-<pre><code class="java">class Solution {
+<pre><code class="lang-java">class Solution {
 //    List&lt;Integer&gt; vals = new ArrayList&lt;&gt;();
 //    Integer v1, v2;
 //    public void recoverTree(TreeNode root) {
@@ -1188,9 +1188,139 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1203,6 +1333,46 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">LeetCode.229 Majority Element II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">LeetCode.224 Basic Calculator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">LeetCode.223 Rectangle Area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">LeetCode.206 Course Schedule</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">LeetCode.209 Minimum Size Subarray Sum</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">LeetCode.201 Bitwise AND of Numbers Range</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">如何在 hexo 中支持 Mathjax？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">LeetCode.200 Number of Islands</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1316,12 +1486,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
@@ -1479,7 +1649,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

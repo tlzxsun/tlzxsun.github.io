@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Matteo">
     <meta name="renderer" content="webkit">
@@ -198,7 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -206,7 +206,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -398,7 +398,7 @@ height:50vh;
         <h5 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h5><ul>
 <li>给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用，并输出所有解<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5></li>
 <li><p>一开始想着跟上一题一样的解法，DP然后记录所有解，但是想想要输出所有解，递归应该可以，很意外的还是TLE了😫</p>
-<pre><code class="java">class Solution {
+<pre><code class="lang-java">class Solution {
 
   List&lt;String&gt; results = new ArrayList&lt;&gt;();
   List&lt;String&gt; result = new ArrayList&lt;&gt;();
@@ -429,7 +429,7 @@ height:50vh;
 </code></pre>
 <h5 id="正确打开方式"><a href="#正确打开方式" class="headerlink" title="正确打开方式"></a>正确打开方式</h5></li>
 <li><p>采用DP时记录当前结果，假如直接DP会TLE，于是先判断是否能有解再DP记录当前结果。虽然能AC但是非常慢，肯定有更好的解法，后来尝试了先判断是否有解再采用递归，发现时间跟采用DP基本一致，问题应该是出在DP记录解的时候</p>
-<pre><code class="java">class Solution {
+<pre><code class="lang-java">class Solution {
 
   Map&lt;Integer, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();
 
@@ -490,7 +490,7 @@ height:50vh;
 </blockquote>
 </li>
 </ul>
-<pre><code class="java">class Solution {
+<pre><code class="lang-java">class Solution {
 
 //    class Solution {
 //        public:
@@ -543,7 +543,6 @@ height:50vh;
         return res;
     }
 }
-
 </code></pre>
 
     </article>
@@ -1255,9 +1254,139 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1270,6 +1399,46 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">LeetCode.229 Majority Element II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">LeetCode.224 Basic Calculator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">LeetCode.223 Rectangle Area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">LeetCode.206 Course Schedule</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">LeetCode.209 Minimum Size Subarray Sum</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">LeetCode.201 Bitwise AND of Numbers Range</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">如何在 hexo 中支持 Mathjax？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">LeetCode.200 Number of Islands</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1383,12 +1552,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
@@ -1546,7 +1715,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

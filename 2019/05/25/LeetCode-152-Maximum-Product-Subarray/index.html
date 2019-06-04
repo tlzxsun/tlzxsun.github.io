@@ -11,7 +11,7 @@
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Matteo">
     <meta name="renderer" content="webkit">
@@ -198,7 +198,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -206,7 +206,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -401,10 +401,10 @@ height:50vh;
 </ul>
 <ol>
 <li>暴力求解，复杂度O($ n^2$)</li>
-<li>动态规划：由于负负得正，因此需要定义一个dp[n][2]，其中dp[i][0]用来记录到i位置时的最小乘积，dp[i][1]记录到i到的最大乘积，得到如下动态转移方程，时间复杂度为O(n)，提交后发现排名非常靠后，肯定有更好的解法<pre><code class="java">dp[i][0] = Math.min(Math.min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i]);
+<li>动态规划：由于负负得正，因此需要定义一个dp[n][2]，其中dp[i][0]用来记录到i位置时的最小乘积，dp[i][1]记录到i到的最大乘积，得到如下动态转移方程，时间复杂度为O(n)，提交后发现排名非常靠后，肯定有更好的解法<pre><code class="lang-java">dp[i][0] = Math.min(Math.min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i]);
 dp[i][1] = Math.max(Math.max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i]);
 </code></pre>
-代码如下<pre><code class="java">class Solution {
+代码如下<pre><code class="lang-java">class Solution {
  public int maxProduct(int[] nums) {
      int dp[][] = new int[nums.length][2];
      int max = nums[0];
@@ -420,7 +420,7 @@ dp[i][1] = Math.max(Math.max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nu
 }
 </code></pre>
 </li>
-<li><p>查看了排名最靠前的解法，遍历数组，依次相乘，记下最大值，当遇到0刚重新开始计算，然后从后往前再计算一遍，再取两次结果的最大值。大概想了下<br>3.1. 0的情况比较简单，即0之前部分，0和0之后部分乘积比较<br>不考虑0的情况下<br>3.2.1 偶数个负数的情况，所有的负数肯定会参与运算<br>3.2.2 奇数个负数的情况，乘积最大化的情况只能是排除头尾负数的情况<br>时间复杂度也为O(n)<br><code>`</code>java<br>class Solution {</p>
+<li><p>查看了排名最靠前的解法，遍历数组，依次相乘，记下最大值，当遇到0刚重新开始计算，然后从后往前再计算一遍，再取两次结果的最大值。大概想了下<br>3.1. 0的情况比较简单，即0之前部分，0和0之后部分乘积比较<br>不考虑0的情况下<br>3.2.1 偶数个负数的情况，所有的负数肯定会参与运算<br>3.2.2 奇数个负数的情况，乘积最大化的情况只能是排除头尾负数的情况<br>时间复杂度也为O(n)<br>```java<br>class Solution {</p>
 <p> public int maxProduct(int[] nums) {</p>
 <pre><code> int max = 1;
  int result = nums[0];
@@ -450,8 +450,8 @@ dp[i][1] = Math.max(Math.max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nu
 </code></pre><p> }</p>
 </li>
 </ol>
-<p>}<br><code>`</code></p>
-<ol start="4">
+<p>}<br>```</p>
+<ol>
 <li>比较奇怪的是动态规划明明只进行了一次遍历，但是却比3.的解法更快，可能是由于动态规划每次遍历需要进行2次乘法和5次比较，而下面的3.的遍历只须进行1次乘法和2次比较</li>
 </ol>
 
@@ -1164,9 +1164,139 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1179,6 +1309,46 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">LeetCode.229 Majority Element II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">LeetCode.224 Basic Calculator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">LeetCode.223 Rectangle Area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">LeetCode.206 Course Schedule</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">LeetCode.209 Minimum Size Subarray Sum</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">LeetCode.201 Bitwise AND of Numbers Range</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">如何在 hexo 中支持 Mathjax？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">LeetCode.200 Number of Islands</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1292,12 +1462,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
@@ -1455,7 +1625,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 

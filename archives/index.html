@@ -346,6 +346,245 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">
+            
+                <span>LeetCode.229 Majority Element II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/majority-element-ii/
+题意
+求数组中占比超过1/3的数解法
+投票法（先背下～）
+class Solution {
+  public List&lt;Integer&gt; majorityElement(int[] nums) {
+      //Space Complexity : O(n)
+      //Time Complexity : O(1)
+      //There can be only 2 major elements
+      ArrayList&lt;Integer&gt; resu...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">
+            
+                <span>LeetCode.224 Basic Calculator</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/basic-calculator/
+题意
+实现一个带“（”，“）”，“+”，“-”运算符的简易计算器解法
+不难但是好复杂
+class Solution {
+  public int calculate(String s) {
+      s = s.replaceAll(&quot;\\s*&quot;, &quot;&quot;);
+      int i = 0;
+      Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+      while ( i &lt; s.len...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">
+            
+                <span>LeetCode.223 Rectangle Area</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/rectangle-area/
+题意
+求两个矩形所占总面积解法
+两个矩形可能有三种情况
+
+
+相交，取两个矩形面积相加减去重叠面积
+不相交，返回两个矩形面积之和
+包含，取两上矩形面积中的最大值计算出重叠面积后如果重叠面积等于其中一个的面积，说明两个矩形是包含关系。虽然结果不出超出int范围，但中间过程中还是会溢出，所以先转成long计算class Solution {
+ public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">
+            
+                <span>LeetCode.206 Course Schedule</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/course-schedule/
+题意
+选修课程里，基本一门课程可能要先学习另一门课程才能学习，判断是否能完成学习所有课程暴力解法
+遇到依赖时直接往递归求解被依赖的课程能否完成学习，完成后需要放入缓存，以备后续计算可能再次计算到这门课程。需要注意的一点就是循环依赖，没想出好的方法，直接在计算后续依赖时加入计数，因为依赖数最大为numCourses-1，当计算依赖次数到达numsCourses肯定是存在循环依赖。
+class Solution {
+  HashMap&lt;Integer, Boolean&gt; status =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">
+            
+                <span>LeetCode.209 Minimum Size Subarray Sum</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/minimum-size-subarray-sum/
+题意
+从nums数组中找出最小连续子序列的和不小于s解法
+一开始的想法就是从每一个数向后累加，直接和大于s，但是这样复杂度为O($n^2$)，可能会超时
+后来发现
+
+
+假定nums[start, i]的和不小于s，那么nums[start, i - 1]的任意子序列的和肯定小于s。
+假定sum - num[start]的和仍不小于s，根据1的结论，那么以start+1为起点的子序列长度的最小值肯定不小于[start, i]，因此将start后移直到sum小于s。
+s继续累加直...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">
+            
+                <span>如何在 hexo 中支持 Mathjax？</span>
+        </a>
+        <div class="abstract-content">
+            具体参考下面博文https://blog.csdn.net/u014630987/article/details/78670258
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">
+            
+                <span>LeetCode.201 Bitwise AND of Numbers Range</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/bitwise-and-of-numbers-range/
+题意
+求[m,n]所有数字按位相与的结果
+看题感觉需要对所有的[m,n]范围内的数字进行遍历一遍吧。。其实不需要的。我们知道，数组的数字是连续的，那么m,n范围内的二进制表示的末尾相同位置一定会出现不同的0,1.我们只要找出m,n的做左边起的最长相同的二进制头部即可呀。如[5, 7]里共有三个数字，分别写出它们的二进制为：101　　110　　111相与后的结果为100，仔细观察我们可以得出，最后的数是该数字范围内所有的数的左边共同的部分（即m,n左边的共同部分），如果上...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">
+            
+                <span>LeetCode.200 Number of Islands</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/number-of-islands/
+题意
+1代表陆地，0代表海水，横向纵向相连的陆地认为是同一个岛，求有几个岛解法
+开始想的是找到第一块陆地然后遍历查找，绕了一大圈发现好像不对。
+正确思路就是找到第一块陆地然后向四个方向查找，并将找到的陆地置为’.’，计数加1，继续遍历直到最后一个位置
+class Solution {
+  public int numIslands(char[][] grid) {
+      int row = grid.length;
+      if (row == 0) {
+          re...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/29/LeetCode-199-Binary-Tree-Right-Side-View/">
             
                 <span>LeetCode.199 Binary Tree Right Side View</span>
@@ -398,251 +637,10 @@ class Solution {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-213-House-Robber-II/">
-            
-                <span>LeetCode.213 House Robber II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/house-robber-ii/submissions/
-题意
-与198基本一样，专业劫匪去打劫一排房子，由于打劫相邻的房子会触发警报，因此只能打劫不相邻的房子，并且房子围成了圈，所以不能同时打劫首尾的房子，求能打劫的最大钱数。解法
-动态规划，很容易得到动态方程dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])，即当前位置最大钱为打劫到前两栋加上当前的钱与打劫到前一栋的最大值，由于是i-2，因此dp数组大小定义为nums.length+2。
-由于首尾的房子不能同时打劫，因此分开计算不包含第一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-198-House-Robber/">
-            
-                <span>LeetCode.198 House Robber</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/house-robber/
-题意
-专业劫匪去打劫一排房子，由于打劫相邻的房子会触发警报，因此只能打劫不相邻的房子，求能打劫的最大钱数解法
-动态规划，很容易得到动态方程dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])，即当前位置最大钱为打劫到前两栋加上当前的钱与打劫到前一栋的最大值，由于是i-2，因此dp数组大小定义为nums.length+2class Solution {
-  public int rob(int[] nums) {
-      int dp[] = new int[nu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-190-Reverse-Bits/">
-            
-                <span>LeetCode.190 Reverse Bits</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/reverse-bits/
-题意
-整数按位翻转解法
-由于限制位数为32位，所以只需对待处理的整数n进行32次右移位，每当低位&amp;1的结果为1，说明低位为1，此时将待输出的目标整数(默认值为0)左移动一位并加上1；每当低位&amp;1的结果为0，说明低位为0，此时将待输出的目标整数左移一位即可；循环直到移动完32次，所得目标整数即为所求。https://blog.csdn.net/pistolove/article/details/46868017
-
-
-
-class Solution {
-    public int rev...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/28/LeetCode-179-Largest-Number/">
-            
-                <span>LeetCode.179 Largest Number</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/largest-number/
-题意
-求int数组拼接的最大值解法
-先转成String，然后排序。排序里先按位比较，当2个数字开头相等但长度不等，则比较这两个数字拼接结果`javaclass Solution {  public String largestNumber(int[] nums) {
-  List&lt;String&gt; ns = Arrays.stream(nums).mapToObj(new IntFunction&lt;String&gt;() {
-      @Override
-      public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/28/LeetCode-174-Dungeon-Game/">
-            
-                <span>LeetCode.174 Dungeon Game</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/dungeon-game/
-题意
-勇士从迷宫的左上角走到右下角去救公主，路上每次房间有怪物（扣血）或者血瓶（加血），勇士的血量必须大于0，否则的GG了。求勇士出发时的最小血量思路
-开始想用dfs做，但是需要遍历所有情况，时间复杂度为O($c^r$)，即使做出来也肯定是TLE。觉得应该是用动态规划做，但是想的从左上角开始规划，一直没想出来。后来了看了网上的解法，从公主位置开始规划，就简单很多。下面说下思路
-
-
-公主房间的血量为max(1, 1- dungeon[row-1][column-1])，因为公主房间是最后一个，此时血量为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/27/LeetCode-169-Majority-Element/">
-            
-                <span>LeetCode.169 Majority Element</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/majority-element/
-题意
-找出一个无序数列中占多数的数解法
-
-
-排序后（n/2位置即结果）位置即结果
-https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
-
-class Solution {
-    public int majorityElement(int[] nums) {
-        //Boyer Moore Voting Algorithm
-        int count = 0, candidate...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/27/LeetCode-166-Fraction-to-Recurring-Decimal/">
-            
-                <span>LeetCode.166 Fraction to Recurring Decimal</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/fraction-to-recurring-decimal/
-题意
-除法，用（）来表示重复部分解法
-
-
-计算整数部分，计下商和余数
-假定余数不为0，则余数*10，将余数和位置加入map中用于判断余数是否重复，并将商加入小数部分
-重复2，直至余数重复
-在分数部分中第一个重复位置插入（class Solution {
- //考虑到-2147483648的情况，不能直接abs
- public String fractionToDecimal(int numerator, int denominator) {
-     StringBu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/25/LeetCode-152-Maximum-Product-Subarray/">
-            
-                <span>LeetCode.152 Maximum Product Subarray</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/maximum-product-subarray/
-题意
-求一个数组中子序列的最大乘积解法
-
-
-暴力求解，复杂度O($ n^2$)
-动态规划：由于负负得正，因此需要定义一个dp[n][2]，其中dp[i][0]用来记录到i位置时的最小乘积，dp[i][1]记录到i到的最大乘积，得到如下动态转移方程，时间复杂度为O(n)，提交后发现排名非常靠后，肯定有更好的解法dp[i][0] = Math.min(Math.min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i])...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1292,9 +1290,139 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1307,6 +1435,46 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">LeetCode.229 Majority Element II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">LeetCode.224 Basic Calculator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">LeetCode.223 Rectangle Area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">LeetCode.206 Course Schedule</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">LeetCode.209 Minimum Size Subarray Sum</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">LeetCode.201 Bitwise AND of Numbers Range</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">如何在 hexo 中支持 Mathjax？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">LeetCode.200 Number of Islands</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1420,12 +1588,12 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">LeetCode.132 Palindrome Partitioning II</a>
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">LeetCode.133 Clone Graph</a>
         </li>
     
     
@@ -1581,7 +1749,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
 
 
