@@ -346,6 +346,275 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/20/LeetCode-300-Longest-Increasing-Subsequence/">
+            
+                <span>LeetCode.300 Longest Increasing Subsequence</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/longest-increasing-subsequence/
+题意
+求序列中最长可不连接递增序列😂解法
+
+
+双重遍历，复杂度$O(n^2)$
+动态规划，以nums[i]结束的最大递增序列，即从nums[i]向前遍历，如果nums[j]小于nums[i]那么nums[i]=Math.max(nums[i], nums[j] + 1)```javaclass Solution { public int lengthOfLIS(int[] nums) { if (nums == null || nums.length == 0) ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/20/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/">
+            
+                <span>LeetCode.297 Serialize and Deserialize Binary Tree</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+题意
+实现Codec中序列化与反序列二叉树方法解法
+序列化时采用按层次遍历，其中左右子结点为空时也加入结果
+反序列化时
+
+
+将第一个结点加入queue
+queue中出列，如果结点不为null，刚从结果中取两个结点，分别赋值给结点的左右子树
+重复2直至queue为空
+class Codec {
+
+ // Encodes a tree to a single string.
+ public String serialize(TreeNode root) {...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/14/LeetCode-295-Find-Median-from-Data-Stream/">
+            
+                <span>LeetCode.295 Find Median from Data Stream</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/find-median-from-data-stream/
+题意
+实现一个MedianFinder，实现添加数字和查找中位数的功能，中位数定义为当数字个数位奇数时，返回中间的数，否则返回中间两个数的平均值解法
+完全不知道怎么解，看了网上的解法才知道大小堆😂
+大顶堆表示元素从小到大排列，大的元素在顶，小顶堆表示元素从大到小排列，小的元素在顶。且大堆中所有元素均小于小堆中元素。
+解法中用PriorityQueue实现大小堆
+class MedianFinder {
+
+  //小顶堆，元素从小到大排列，先取到小的元素
+  Prior...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/13/LeetCode-292-Nim-Game/">
+            
+                <span>LeetCode.292 Nim Game</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/nim-game/
+题意
+两个人依次取数，每次可以取1，2，3，给出一个数，求先取的能否获胜解法
+获胜的人肯定是最后一个取数，可能取1，2，3，f(n)时只要f(n-1)，f(n-2)，f(n-3)中有一个不能取胜，那么f(n)就能取胜，类似于斐波那挈数列的求法。但是当n很大的时候递归肯定会StackOverFlow，因此用一个数组来保存中间结果，结果Memory Limit Exceeded😂😂
+后来再一想，f(n)依赖于f(n-1)，f(n-2)，f(n-3)。其中f(1)，f(2)，f(3)是false，f(4)是tr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/10/LeetCode-279-Perfect-Squares/">
+            
+                <span>LeetCode.279 Perfect Squares</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/perfect-squares/
+题意
+给一个数，将它分解成整数的平方数之和，求最小的平方数的数量解法
+BFS，采用queue计算中间结果，current表示当前值，count表示最小数量
+
+
+将n入列
+queue中取值赋给current，计算1到current之间的所有平方数
+遍历1到current之前的平方数num，假如current等于平方数，因为是BFS，每一次都会遍历所有的可能结果，那么此时肯定是count最小值，返回结果，否则将current-num加入临时结果集
+直到queue为空，说明这一层已经遍历结束，coun...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/10/LeetCode-260-Single-Number-III/">
+            
+                <span>LeetCode.260 Single Number III</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/single-number-iii/
+题意
+数组中除了两个数出现一次，其它的数都出现两次，求解要求满足时间复杂度O(n)，空间复杂度O(1)解法
+所有的数异或的结果就是两个数异或的结果，因为两个相同的数异或肯定是0，而0跟任何数异或都是那个数本身
+最终结果转换成二进制的结果中为1的位，必然有其中一个数该位为1，另一个数该位为0，只有0，1异否才是1
+将数组中的所有数与二进制中仅一位为1的数resInt异或，那么所有结果为0的数异或就是其中一个数，为1的是另外一个数。此时不需要考虑出现两次的数，因为他们与restInt的异或结果相...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/06/LeetCode-240-Search-a-2D-Matrix-II/">
+            
+                <span>LeetCode.240 Search a 2D Matrix II</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/LeetCode-233-Number-of-Digit-One/">
+            
+                <span>LeetCode.233 Number of Digit One</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/number-of-digit-one/
+题意
+求1到n之间所有数中1的出现次数解法
+先计算出位数与n相同且为10的倍数的数，根据n的最大位digit分为两种情况
+
+
+digit == 1，刚f(n) = 1 + n%k + f(n%k) + f(k-1)，即以1开头位数与n相同的数共有n%k+1个，再加上n%k里1的出现次数再加上0到k-1里1的出现次数即是最后结果
+digit != 1，则f(n) = f[k, n] + f(k-1)，即结果为k到n的数里1的出现次数加上0到k-1里1的出现次数2.1 其中f[k, n] =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/LeetCode-232-Implement-Queue-using-Stacks/">
+            
+                <span>LeetCode.232 Implement Queue using Stacks</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/implement-queue-using-stacks/submissions/
+题意
+用Stack来实现队列的功能解法
+采用两个Stack sPush和sPop来实现，push时加进sPush，pop时判断sPop是否为空，否则将sPush中的所有元素加进sPop，再从sPop中pop
+class MyQueue {
+
+  Stack&lt;Integer&gt; push = new Stack&lt;&gt;();
+  Stack&lt;Integer&gt; pop = new Stack&lt;&gt;();
+
+  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">
             
                 <span>LeetCode.229 Majority Element II</span>
@@ -372,72 +641,11 @@ class Solution {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">
-            
-                <span>LeetCode.224 Basic Calculator</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/basic-calculator/
-题意
-实现一个带“（”，“）”，“+”，“-”运算符的简易计算器解法
-不难但是好复杂
-class Solution {
-  public int calculate(String s) {
-      s = s.replaceAll(&quot;\\s*&quot;, &quot;&quot;);
-      int i = 0;
-      Stack&lt;String&gt; stack = new Stack&lt;&gt;();
-      while ( i &lt; s.len...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">
-            
-                <span>LeetCode.223 Rectangle Area</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/rectangle-area/
-题意
-求两个矩形所占总面积解法
-两个矩形可能有三种情况
-
-
-相交，取两个矩形面积相加减去重叠面积
-不相交，返回两个矩形面积之和
-包含，取两上矩形面积中的最大值计算出重叠面积后如果重叠面积等于其中一个的面积，说明两个矩形是包含关系。虽然结果不出超出int范围，但中间过程中还是会溢出，所以先转成long计算class Solution {
- public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/06/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/06/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -1216,9 +1424,160 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 48
+        Total : 57
         </div>
         <!-- search  -->
         
@@ -1231,6 +1590,51 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/20</span><a class="archive-post-title" href="/2019/06/20/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/">LeetCode.297 Serialize and Deserialize Binary Tree</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/20</span><a class="archive-post-title" href="/2019/06/20/LeetCode-300-Longest-Increasing-Subsequence/">LeetCode.300 Longest Increasing Subsequence</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/14</span><a class="archive-post-title" href="/2019/06/14/LeetCode-295-Find-Median-from-Data-Stream/">LeetCode.295 Find Median from Data Stream</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/13</span><a class="archive-post-title" href="/2019/06/13/LeetCode-292-Nim-Game/">LeetCode.292 Nim Game</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/10</span><a class="archive-post-title" href="/2019/06/10/LeetCode-279-Perfect-Squares/">LeetCode.279 Perfect Squares</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/10</span><a class="archive-post-title" href="/2019/06/10/LeetCode-260-Single-Number-III/">LeetCode.260 Single Number III</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/2019/06/06/LeetCode-240-Search-a-2D-Matrix-II/">LeetCode.240 Search a 2D Matrix II</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/2019/06/05/LeetCode-233-Number-of-Digit-One/">LeetCode.233 Number of Digit One</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/2019/06/05/LeetCode-232-Implement-Queue-using-Stacks/">LeetCode.232 Implement Queue using Stacks</a>
+        </li>
     
     
         <li class="archive-post-item">
