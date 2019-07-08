@@ -359,6 +359,105 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/25/LeetCode-150-Evaluate-Reverse-Polish-Notation/">
+            
+                <span>LeetCode.150 Evaluate Reverse Polish Notation</span>
+        </a>
+        <div class="abstract-content">
+            题意
+计算逆波兰法表示的算式解法
+遇到数字存入栈，遇到符号则出栈两个数字，并将结果入栈
+class Solution {
+
+  Stack&lt;Integer&gt; integers = new Stack&lt;&gt;();
+
+  public int evalRPN(String[] tokens) {
+      for(String token: tokens) {
+          if (&quot;+&quot;.equals(token)) {
+              int n2 = integers.pop(), n1 = integers.pop();
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/25/LeetCode-148-Sort-List/">
+            
+                <span>LeetCode.148 Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/sort-list/
+题意
+不借助额外空间对链表进行排序解法
+先使用快慢指针将链表分为前后两部分，分别对两部分排序，最后对排序好的两个链表进行合并
+class Solution {
+  public ListNode sortList(ListNode head) {
+      //当head为null或仅剩head的时候直接返回
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode fast =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">
+            
+                <span>LeetCode.147 Insertion Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/insertion-sort-list/
+题意
+使用插入排序对链表进行排序笨办法
+每次找错序的节点，断开该节点后从头开始查找合适位置并插入，能AC但是非常慢class Solution {
+  public ListNode insertionSortList(ListNode head) {
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode cur = head;
+      //是否查找到最...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">
             
                 <span>LeetCode.145 Binary Tree Postorder Traversal</span>
@@ -573,101 +672,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/20/LeetCode-135-Single-Number/">
-            
-                <span>LeetCode.135 Single Number</span>
-        </a>
-        <div class="abstract-content">
-            题意
-一次循环找出数组中唯一一个只出现一次的数字
-直接放别人的解吧，好精妙https://blog.csdn.net/Cloudox_/article/details/52459584 public int singleNumber(int[] nums) {
-      int result = 0;
-      for(int i=0;i&lt;nums.length;i++) result ^= nums[i];
-      return result;
-}
-
-解释
-四行代码就解决了，我们看看它做了什么，先设定一个0，然后循环和数组中的每个数去做异或运算，每次得出的结果都继续和下一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">
-            
-                <span>LeetCode.134 Gas Station</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/gas-station/submissions/
-思路1 
-算出每个station出发之后剩余的gas，保存在数组中
-从数组中找出剩余gas不小于0的位置，然后从该位置开始查询，走回原点或者gas小于0退出循环
-这个解法能AC，但是非常慢，继续想
-
-
-AC解class Solution {
-  public int canCompleteCircuit(int[] gas, int[] cost) {
-      int gasLeft[] = new int[gas.length];
-      for (int i = 0...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">
-            
-                <span>LeetCode.133 Clone Graph</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/clone-graph/
-思路
-头昏眼花想不出任何方法，看了别人思路发现好简单
-1、广度优先遍历(BFS)2、深度优先遍历(DFS)2.1、递归2.2、非递归https://www.cnblogs.com/ganganloveu/p/4119462.html
-解法class Solution {
-  HashMap&lt;Node, Node&gt; map = new HashMap&lt;&gt;();
-  public Node cloneGraph(Node node) {
-      if (node == null)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
             </div>
             <!-- tags  -->
             
@@ -1682,9 +1686,46 @@ AC解class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 57
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1697,6 +1738,21 @@ AC解class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/08/LeetCode-318-Maximum-Product-of-Word-Lengths/">LeetCode.318 Maximum Product of Word Lengths</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/24</span><a class="archive-post-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">LeetCode.312 Burst Balloons</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/LeetCode-306-Additive-Number/">LeetCode.306 Additive Number</a>
+        </li>
     
     
         <li class="archive-post-item">

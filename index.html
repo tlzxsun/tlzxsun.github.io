@@ -359,6 +359,98 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/08/LeetCode-318-Maximum-Product-of-Word-Lengths/">
+            
+                <span>LeetCode.318 Maximum Product of Word Lengths</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/maximum-product-of-word-lengths/
+题意
+求字符串数组中不含相同字母的字符串的长度的乘积的最大值（好拗口～～）思路
+由于只有26个字母，因此可以用一个int的每一位表示该字符串是否含有某个字符，两个数&amp;的结果为0则表示没有相同的字母
+开始以为暴力求解两两相乘的话时间复杂度为O($n^2$)，可能会有更好的解法，结果好像并没有//将 整数 num 的第 i 位的值 置为 1
+  private static int getBit(int num, int i)
+  {
+      return...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">
+            
+                <span>LeetCode.312 Burst Balloons</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/burst-balloons/
+题意
+给你一个数组,你要爆掉所有数字，爆某个数字的时候会获得它现在相邻的两个数字和它的乘积。如果这个数字没有左相邻或右相邻，则乘1代替，问爆掉所有数字的最高分数。思路
+暴力计算的话复杂度为O(n!)肯定会超时
+看到别人的解法是区间dp
+
+dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我们枚举[i,j]里最后一个爆掉的数字的位置k.由于我们只爆掉[i,j]里的元素,因此最后爆掉k的时候,k的左右邻居一定是i-1和j+1.初始化为:dp[i][i]=arr[i-1]arr[i]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/21/LeetCode-306-Additive-Number/">
+            
+                <span>LeetCode.306 Additive Number</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/additive-number/
+题意
+求解一个字符串是否是类似fibonacci，即每个数是否前两个数构成解法
+看不懂题意～～看懂以后发现好像并不难，先求出前两个数，再往后推算即可
+class Solution {
+
+  public boolean isAdditiveNumber(String num) {
+      int len = num.length();
+      //先取第一个数
+      for (int i = 1; i &lt;= len; i++) {
+          //从第一个数之后取第二...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/20/LeetCode-300-Longest-Increasing-Subsequence/">
             
                 <span>LeetCode.300 Longest Increasing Subsequence</span>
@@ -554,100 +646,6 @@ queue中取值赋给current，计算1到current之间的所有平方数
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/05/LeetCode-233-Number-of-Digit-One/">
-            
-                <span>LeetCode.233 Number of Digit One</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/number-of-digit-one/
-题意
-求1到n之间所有数中1的出现次数解法
-先计算出位数与n相同且为10的倍数的数，根据n的最大位digit分为两种情况
-
-
-digit == 1，刚f(n) = 1 + n%k + f(n%k) + f(k-1)，即以1开头位数与n相同的数共有n%k+1个，再加上n%k里1的出现次数再加上0到k-1里1的出现次数即是最后结果
-digit != 1，则f(n) = f[k, n] + f(k-1)，即结果为k到n的数里1的出现次数加上0到k-1里1的出现次数2.1 其中f[k, n] =...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/05/LeetCode-232-Implement-Queue-using-Stacks/">
-            
-                <span>LeetCode.232 Implement Queue using Stacks</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/implement-queue-using-stacks/submissions/
-题意
-用Stack来实现队列的功能解法
-采用两个Stack sPush和sPop来实现，push时加进sPush，pop时判断sPop是否为空，否则将sPush中的所有元素加进sPop，再从sPop中pop
-class MyQueue {
-
-  Stack&lt;Integer&gt; push = new Stack&lt;&gt;();
-  Stack&lt;Integer&gt; pop = new Stack&lt;&gt;();
-
-  ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">
-            
-                <span>LeetCode.229 Majority Element II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/majority-element-ii/
-题意
-求数组中占比超过1/3的数解法
-投票法（先背下～）
-class Solution {
-  public List&lt;Integer&gt; majorityElement(int[] nums) {
-      //Space Complexity : O(n)
-      //Time Complexity : O(1)
-      //There can be only 2 major elements
-      ArrayList&lt;Integer&gt; resu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
             </div>
             <!-- tags  -->
             
@@ -1662,9 +1660,46 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 57
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1677,6 +1712,21 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/08/LeetCode-318-Maximum-Product-of-Word-Lengths/">LeetCode.318 Maximum Product of Word Lengths</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/24</span><a class="archive-post-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">LeetCode.312 Burst Balloons</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/LeetCode-306-Additive-Number/">LeetCode.306 Additive Number</a>
+        </li>
     
     
         <li class="archive-post-item">

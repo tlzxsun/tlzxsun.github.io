@@ -346,6 +346,100 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/LeetCode-233-Number-of-Digit-One/">
+            
+                <span>LeetCode.233 Number of Digit One</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/number-of-digit-one/
+题意
+求1到n之间所有数中1的出现次数解法
+先计算出位数与n相同且为10的倍数的数，根据n的最大位digit分为两种情况
+
+
+digit == 1，刚f(n) = 1 + n%k + f(n%k) + f(k-1)，即以1开头位数与n相同的数共有n%k+1个，再加上n%k里1的出现次数再加上0到k-1里1的出现次数即是最后结果
+digit != 1，则f(n) = f[k, n] + f(k-1)，即结果为k到n的数里1的出现次数加上0到k-1里1的出现次数2.1 其中f[k, n] =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/05/LeetCode-232-Implement-Queue-using-Stacks/">
+            
+                <span>LeetCode.232 Implement Queue using Stacks</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/implement-queue-using-stacks/submissions/
+题意
+用Stack来实现队列的功能解法
+采用两个Stack sPush和sPop来实现，push时加进sPush，pop时判断sPop是否为空，否则将sPush中的所有元素加进sPop，再从sPop中pop
+class MyQueue {
+
+  Stack&lt;Integer&gt; push = new Stack&lt;&gt;();
+  Stack&lt;Integer&gt; pop = new Stack&lt;&gt;();
+
+  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">
+            
+                <span>LeetCode.229 Majority Element II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/majority-element-ii/
+题意
+求数组中占比超过1/3的数解法
+投票法（先背下～）
+class Solution {
+  public List&lt;Integer&gt; majorityElement(int[] nums) {
+      //Space Complexity : O(n)
+      //Time Complexity : O(1)
+      //There can be only 2 major elements
+      ArrayList&lt;Integer&gt; resu...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">
             
                 <span>LeetCode.224 Basic Calculator</span>
@@ -541,91 +635,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-199-Binary-Tree-Right-Side-View/">
-            
-                <span>LeetCode.199 Binary Tree Right Side View</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/binary-tree-right-side-view/
-题意
-按层次输出二叉树最右结点解法
-
-
-BFS按层次遍历BFS一般用queue作为辅助，先将根结点入列，然后依次出列，每次将出列结点的左右结点再加入队列。这里需要记下最右结点，需要做一个调整，普通遍历的时候并没有区分层次。这里需要每次while循环时记下当前结点数量个数，然后将当前所有结点出列，并将左右结点入列，每次while循环时的结点数量就是该层的数量，将该层第一个结点加入结果即可。class Solution {
- List&lt;Integer&gt; resul...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-337-House-Robber-III/">
-            
-                <span>LeetCode.337 House Robber III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/house-robber-iii/
-题意
-还是专业劫匪打劫，不能抢相邻的房子，但是这次房子的结构不再是线性而是一个二叉树了。解法
-开始想着把二叉树先展开，发现不行。后来想到用递归来实现，递归的思路就比较简单了，大致上就是打劫当前结点所得加上打劫左右子树的左右子树的结果相加与打劫当前结点左右子树结果相加取大的那个。先完后发现代码好少，但是提交后时间非常长，因为递归每次都会去计算，随着层次变深，结点的遍历次数也在递增，加上缓存后时间缩小到原来的百分之一。
-class Solution {
-
-  HashMap&lt;TreeNode...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/29/LeetCode-213-House-Robber-II/">
-            
-                <span>LeetCode.213 House Robber II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/house-robber-ii/submissions/
-题意
-与198基本一样，专业劫匪去打劫一排房子，由于打劫相邻的房子会触发警报，因此只能打劫不相邻的房子，并且房子围成了圈，所以不能同时打劫首尾的房子，求能打劫的最大钱数。解法
-动态规划，很容易得到动态方程dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])，即当前位置最大钱为打劫到前两栋加上当前的钱与打劫到前一栋的最大值，由于是i-2，因此dp数组大小定义为nums.length+2。
-由于首尾的房子不能同时打劫，因此分开计算不包含第一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
             </div>
             <!-- tags  -->
             
@@ -1566,9 +1575,46 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 57
+        Total : 60
         </div>
         <!-- search  -->
         
@@ -1581,6 +1627,21 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/08/LeetCode-318-Maximum-Product-of-Word-Lengths/">LeetCode.318 Maximum Product of Word Lengths</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/24</span><a class="archive-post-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">LeetCode.312 Burst Balloons</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href="/2019/06/21/LeetCode-306-Additive-Number/">LeetCode.306 Additive Number</a>
+        </li>
     
     
         <li class="archive-post-item">
