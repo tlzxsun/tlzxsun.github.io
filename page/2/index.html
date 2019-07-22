@@ -359,6 +359,116 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/13/LeetCode-292-Nim-Game/">
+            
+                <span>LeetCode.292 Nim Game</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/nim-game/
+题意
+两个人依次取数，每次可以取1，2，3，给出一个数，求先取的能否获胜解法
+获胜的人肯定是最后一个取数，可能取1，2，3，f(n)时只要f(n-1)，f(n-2)，f(n-3)中有一个不能取胜，那么f(n)就能取胜，类似于斐波那挈数列的求法。但是当n很大的时候递归肯定会StackOverFlow，因此用一个数组来保存中间结果，结果Memory Limit Exceeded😂😂
+后来再一想，f(n)依赖于f(n-1)，f(n-2)，f(n-3)。其中f(1)，f(2)，f(3)是false，f(4)是tr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/10/LeetCode-279-Perfect-Squares/">
+            
+                <span>LeetCode.279 Perfect Squares</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/perfect-squares/
+题意
+给一个数，将它分解成整数的平方数之和，求最小的平方数的数量解法
+BFS，采用queue计算中间结果，current表示当前值，count表示最小数量
+
+
+将n入列
+queue中取值赋给current，计算1到current之间的所有平方数
+遍历1到current之前的平方数num，假如current等于平方数，因为是BFS，每一次都会遍历所有的可能结果，那么此时肯定是count最小值，返回结果，否则将current-num加入临时结果集
+直到queue为空，说明这一层已经遍历结束，coun...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/10/LeetCode-260-Single-Number-III/">
+            
+                <span>LeetCode.260 Single Number III</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/single-number-iii/
+题意
+数组中除了两个数出现一次，其它的数都出现两次，求解要求满足时间复杂度O(n)，空间复杂度O(1)解法
+所有的数异或的结果就是两个数异或的结果，因为两个相同的数异或肯定是0，而0跟任何数异或都是那个数本身
+最终结果转换成二进制的结果中为1的位，必然有其中一个数该位为1，另一个数该位为0，只有0，1异否才是1
+将数组中的所有数与二进制中仅一位为1的数resInt异或，那么所有结果为0的数异或就是其中一个数，为1的是另外一个数。此时不需要考虑出现两次的数，因为他们与restInt的异或结果相...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/06/LeetCode-240-Search-a-2D-Matrix-II/">
+            
+                <span>LeetCode.240 Search a 2D Matrix II</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/05/LeetCode-233-Number-of-Digit-One/">
             
                 <span>LeetCode.233 Number of Digit One</span>
@@ -540,124 +650,10 @@ class Solution {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/31/LeetCode-209-Minimum-Size-Subarray-Sum/">
-            
-                <span>LeetCode.209 Minimum Size Subarray Sum</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/minimum-size-subarray-sum/
-题意
-从nums数组中找出最小连续子序列的和不小于s解法
-一开始的想法就是从每一个数向后累加，直接和大于s，但是这样复杂度为O($n^2$)，可能会超时
-后来发现
-
-
-假定nums[start, i]的和不小于s，那么nums[start, i - 1]的任意子序列的和肯定小于s。
-假定sum - num[start]的和仍不小于s，根据1的结论，那么以start+1为起点的子序列长度的最小值肯定不小于[start, i]，因此将start后移直到sum小于s。
-s继续累加直...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/31</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/30/如何在-hexo-中支持-Mathjax？/">
-            
-                <span>如何在 hexo 中支持 Mathjax？</span>
-        </a>
-        <div class="abstract-content">
-            具体参考下面博文https://blog.csdn.net/u014630987/article/details/78670258
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/30/LeetCode-201-Bitwise-AND-of-Numbers-Range/">
-            
-                <span>LeetCode.201 Bitwise AND of Numbers Range</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/bitwise-and-of-numbers-range/
-题意
-求[m,n]所有数字按位相与的结果
-看题感觉需要对所有的[m,n]范围内的数字进行遍历一遍吧。。其实不需要的。我们知道，数组的数字是连续的，那么m,n范围内的二进制表示的末尾相同位置一定会出现不同的0,1.我们只要找出m,n的做左边起的最长相同的二进制头部即可呀。如[5, 7]里共有三个数字，分别写出它们的二进制为：101　　110　　111相与后的结果为100，仔细观察我们可以得出，最后的数是该数字范围内所有的数的左边共同的部分（即m,n左边的共同部分），如果上...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/30/LeetCode-200-Number-of-Islands/">
-            
-                <span>LeetCode.200 Number of Islands</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/number-of-islands/
-题意
-1代表陆地，0代表海水，横向纵向相连的陆地认为是同一个岛，求有几个岛解法
-开始想的是找到第一块陆地然后遍历查找，绕了一大圈发现好像不对。
-正确思路就是找到第一块陆地然后向四个方向查找，并将找到的陆地置为’.’，计数加1，继续遍历直到最后一个位置
-class Solution {
-  public int numIslands(char[][] grid) {
-      int row = grid.length;
-      if (row == 0) {
-          re...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1699,9 +1695,23 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 64
         </div>
         <!-- search  -->
         
@@ -1714,6 +1724,26 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/2019/07/22/LeetCode-329-Longest-Increasing-Path-in-a-Matrix/">LeetCode.329 Longest Increasing Path in a Matrix</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/LeetCode-343-Integer-Break-2/">LeetCode.343 Integer Break</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/2019/07/12/LeetCode-319-Bulb-Switcher/">LeetCode.319 Bulb Switcher</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">LeetCode.315 Count of Smaller Numbers After Self</a>
+        </li>
     
     
         <li class="archive-post-item">

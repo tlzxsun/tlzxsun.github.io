@@ -346,6 +346,126 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/07/22/LeetCode-329-Longest-Increasing-Path-in-a-Matrix/">
+            
+                <span>LeetCode.329 Longest Increasing Path in a Matrix</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+题意
+求二维数组中上下左右延伸的最长序列长度思路
+这类题首先想到的就dfs，从一个数开始搜索，查找这个数开始的最大序列，最终结果就是就是每一个位置的结果取最大值。
+开始想的比较复杂，写了很多没用的逻辑，比如判断这个数是否用过还开了新数组来记录并回溯（因为是递增的，同样的数肯定不会用两次）。写完之后发现第135个case超时了，因为每个数都需要向4个方向搜索，时间复杂度基本上就是O($4^{n^2}$)，n稍大就不可能计算出来。
+后来看了别人的解，思路基本上...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/16/LeetCode-343-Integer-Break-2/">
+            
+                <span>LeetCode.343 Integer Break</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/integer-break/
+题意
+将一个整数n分为若干数，求这些数的最大乘积思路
+BFS
+class Solution {
+
+  Map&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();
+
+  public int integerBreak(int n) {
+      if (n == 1) {
+          return 1;
+      }
+      if (cache.containsKey(n)) {
+          return cache.g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/12/LeetCode-319-Bulb-Switcher/">
+            
+                <span>LeetCode.319 Bulb Switcher</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/bulb-switcher/
+题意
+有n个灯，从1到n，每次对第i*[1,2,3,4…]个灯进行操作，求最终亮灯的个数思路
+https://www.cnblogs.com/grandyang/p/5100098.html这道题给了我们n个灯泡，第一次打开所有的灯泡，第二次每两个更改灯泡的状态，第三次每三个更改灯泡的状态，以此类推，第n次每n个更改灯泡的状态。让我们求n次后，所有亮的灯泡的个数。此题是CareerCup 6.6 Toggle Lockers 切换锁的状态。那么我们来看这道题吧，还是先枚举个小例子来分析下，比如只有5...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/07/11/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">
+            
+                <span>LeetCode.315 Count of Smaller Numbers After Self</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+题意
+求一个数组中每个位置之后比当前元素小的元素的个数思路
+暴力递归居然也能AC～～～
+参考别人思路采用二叉搜索树，在构建树的同时计算比当前节点小的个数
+当前节点root为空，则构建一个新节点，新节点smaller为0，返回新节点
+当前值比当前节点小，那么当前节点smaller++，返回插入当前节点左子树的结果
+当前值不小于当前节点值，那么返回插入当前节点右子树的结果+当前结点的smaller+当前值大于当前节点值?1:0（因为此时节点需要插入右子树，所以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/08/LeetCode-318-Maximum-Product-of-Word-Lengths/">
             
                 <span>LeetCode.318 Maximum Product of Word Lengths</span>
@@ -529,120 +649,10 @@ class MedianFinder {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/13/LeetCode-292-Nim-Game/">
-            
-                <span>LeetCode.292 Nim Game</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/nim-game/
-题意
-两个人依次取数，每次可以取1，2，3，给出一个数，求先取的能否获胜解法
-获胜的人肯定是最后一个取数，可能取1，2，3，f(n)时只要f(n-1)，f(n-2)，f(n-3)中有一个不能取胜，那么f(n)就能取胜，类似于斐波那挈数列的求法。但是当n很大的时候递归肯定会StackOverFlow，因此用一个数组来保存中间结果，结果Memory Limit Exceeded😂😂
-后来再一想，f(n)依赖于f(n-1)，f(n-2)，f(n-3)。其中f(1)，f(2)，f(3)是false，f(4)是tr...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/10/LeetCode-279-Perfect-Squares/">
-            
-                <span>LeetCode.279 Perfect Squares</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/perfect-squares/
-题意
-给一个数，将它分解成整数的平方数之和，求最小的平方数的数量解法
-BFS，采用queue计算中间结果，current表示当前值，count表示最小数量
-
-
-将n入列
-queue中取值赋给current，计算1到current之间的所有平方数
-遍历1到current之前的平方数num，假如current等于平方数，因为是BFS，每一次都会遍历所有的可能结果，那么此时肯定是count最小值，返回结果，否则将current-num加入临时结果集
-直到queue为空，说明这一层已经遍历结束，coun...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/10/LeetCode-260-Single-Number-III/">
-            
-                <span>LeetCode.260 Single Number III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/single-number-iii/
-题意
-数组中除了两个数出现一次，其它的数都出现两次，求解要求满足时间复杂度O(n)，空间复杂度O(1)解法
-所有的数异或的结果就是两个数异或的结果，因为两个相同的数异或肯定是0，而0跟任何数异或都是那个数本身
-最终结果转换成二进制的结果中为1的位，必然有其中一个数该位为1，另一个数该位为0，只有0，1异否才是1
-将数组中的所有数与二进制中仅一位为1的数resInt异或，那么所有结果为0的数异或就是其中一个数，为1的是另外一个数。此时不需要考虑出现两次的数，因为他们与restInt的异或结果相...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/06/LeetCode-240-Search-a-2D-Matrix-II/">
-            
-                <span>LeetCode.240 Search a 2D Matrix II</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="extend next" rel="next" href="/archives/2019/page/2/">NEXT &#62;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/7/">7</a><a class="extend next" rel="next" href="/archives/2019/page/2/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1610,9 +1620,23 @@ queue中取值赋给current，计算1到current之间的所有平方数
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 64
         </div>
         <!-- search  -->
         
@@ -1625,6 +1649,26 @@ queue中取值赋给current，计算1到current之间的所有平方数
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/2019/07/22/LeetCode-329-Longest-Increasing-Path-in-a-Matrix/">LeetCode.329 Longest Increasing Path in a Matrix</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/LeetCode-343-Integer-Break-2/">LeetCode.343 Integer Break</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/2019/07/12/LeetCode-319-Bulb-Switcher/">LeetCode.319 Bulb Switcher</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">LeetCode.315 Count of Smaller Numbers After Self</a>
+        </li>
     
     
         <li class="archive-post-item">

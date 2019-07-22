@@ -346,6 +346,139 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">
+            
+                <span>LeetCode.140 Word Break II</span>
+        </a>
+        <div class="abstract-content">
+            题意
+给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用，并输出所有解思路
+一开始想着跟上一题一样的解法，DP然后记录所有解，但是想想要输出所有解，递归应该可以，很意外的还是TLE了😫
+class Solution {
+
+  List&lt;String&gt; results = new ArrayList&lt;&gt;();
+  List&lt;String&gt; result = new ArrayList&lt;&gt;();
+
+  public List&lt;String&gt; wordBreak(String s, L...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/23/LeetCode-139-Word-Break/">
+            
+                <span>LeetCode.139 Word Break</span>
+        </a>
+        <div class="abstract-content">
+            题意
+给一个字符串和一个字符串数组，判断字符串是否能由数组的字符串组合而成，可以重复使用同时不必全部使用TLE解法
+TLE的自然是递归了😩
+class Solution {
+  Set&lt;String&gt; used = new HashSet&lt;&gt;();
+
+  public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
+      return search(s, wordDict, 0);
+  }
+
+  boolean search(String s, List&lt;String&gt; wo...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/22/LeetCode-135-Candy/">
+            
+                <span>LeetCode.135 Candy</span>
+        </a>
+        <div class="abstract-content">
+            题意给一个数组代表权重，给数组每一个元素赋值，值最小为1，且相邻的元素权重大的值必须大于权重小的
+分析
+直接给第一个元素赋值1，然后依次比较，有三种情况
+
+
+ratings[i] &gt; ratings[i - 1]，则当前值为前一个的值加1
+ratings[i] == ratings[i - 1]，则当前值为1
+ratings[i] &lt; ratings[i - 1]，刚当前值为1，这时候需要处理前一个值也为1的情况，需要往前遍历，将ratings[i - 1]加1
+
+
+这个解法能AC，但是非常慢
+class Solution {
+  public int candy(int[]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/20/LeetCode-138/">
+            
+                <span>LeetCode.138 Copy List with Random Pointer  </span>
+        </a>
+        <div class="abstract-content">
+            题意拷贝一个结点的所有子结点，与前面有一题一样的解法
+class Solution {
+
+    Map&lt;Node, Node&gt; copied = new HashMap&lt;&gt;();
+
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return null;
+        }
+        if (copied.containsKey(head)) {
+            return copied.get(head);
+        }...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/20/LeetCode-135-Single-Number/">
             
                 <span>LeetCode.135 Single Number</span>
@@ -522,136 +655,10 @@ AC解class Solution {
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
-            
-                <span>LeetCode.126 Word Ladder II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/word-ladder-ii/
-思路
-这题可能用126的解法，区别在于这题需要记下所有的最短解，作下面几点修改
-queue中需要记下完整路径，每一层往queue中增加最短解的时候需要在新增list里增加当前word
-每一层中前面使用的word也能用于后面的情况，但是后面层不会出现该层及之前使用的word，因为广度优先搜索，每个word第一次出现的肯定是最短路
-当某一层中找到解之后，该层遍历结束后即结束寻找
-
-
-虽然很慢，但还是AC了，后续再看找更优解法
-
-解法class Solution {
-    public List&lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-127-Word-Ladder/">
-            
-                <span>LeetCode.127 Word Ladder</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/word-ladder/
-思路
-开始用dfs递归，不出所望超时了，后来想着用动态规划，做了一上午没有一点头绪。算法实在太难了，真心不适合我😭
-因为要求最短路径，如果我们用深度优先搜索的话必须遍历所有的路径才能确定哪个是最短的，而用广度优先搜索的话，一旦搜到目标就可以提前终止了，而且根据广度优先的性质，我们肯定是先通过较短的路径搜到目标。另外，为了避免产生环路和重复计算，我们找到一个存在于字典的新的词时，就要把它从字典中移去。这么做是因为根据广度优先，我们第一次发现词A的路径一定是从初始词到词A最短的路径，对于其他可能再经过词A...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-123-Best-Time-to-Buy-and-Sell-Stock-III/">
-            
-                <span>LeetCode.123 Best Time to Buy and Sell Stock III</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-思路
-暴力解法就是在121的基础上加个二分计算，能AC但是需要447ms，时间复杂度O(2$n^2$)
-class Solution {
-
- public int maxProfit(int[] prices, int start, int end) {
-     int min = Integer.MAX_VALUE, max = 0;
-     for (int i = start; i &lt; end; i++) {
-         //记录到截...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-120-Triangle/">
-            
-                <span>LeetCode.120 Triangle</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/triangle/
-思路
-一开始想到用递归，写的真是优美简洁，然并卵～～一个TLE糊脸
-class Solution {
-
- int min = Integer.MAX_VALUE;
-
- public int minimumTotal(List&lt;List&lt;Integer&gt;&gt; triangle) {
-     search(triangle, 0, 0, 0);
-     return min;
- }
-
- void search(List&lt;List&lt;Integer&gt;&gt; triangl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/4/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/4/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1619,9 +1626,23 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 64
         </div>
         <!-- search  -->
         
@@ -1634,6 +1655,26 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/2019/07/22/LeetCode-329-Longest-Increasing-Path-in-a-Matrix/">LeetCode.329 Longest Increasing Path in a Matrix</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href="/2019/07/16/LeetCode-343-Integer-Break-2/">LeetCode.343 Integer Break</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/2019/07/12/LeetCode-319-Bulb-Switcher/">LeetCode.319 Bulb Switcher</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/2019/07/11/LeetCode-315-Count-of-Smaller-Numbers-After-Self/">LeetCode.315 Count of Smaller Numbers After Self</a>
+        </li>
     
     
         <li class="archive-post-item">
