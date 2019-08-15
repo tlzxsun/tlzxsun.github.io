@@ -359,6 +359,142 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">
+            
+                <span>LeetCode.377 Combination Sum IV</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/combination-sum-iv/
+题意
+给一个数组，求结果为target的组合数，数字可重复解法
+
+
+DFS，直接算会TLE，缓存中间结果后可以通过class Solution {
+ HashMap&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();
+ public int combinationSum4(int[] nums, int target) {
+     if (target == 0) {
+         return 1;
+     } else ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">
+            
+                <span>LeetCode.368 Largest Divisible Subset</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/largest-divisible-subset/
+题意
+求一个数组中最长子序列，子序列中任意两个数满足i % j == 0 || j % i == 0思路这个问题相当于对数组进行排序，求一个子序列，其中每一个数都是前一个的整数倍。
+
+
+开始想的是从每一个数开始向后遍历，记下最大值时的结果。时间复杂度为O(n!)，基本上无法计算出来，加上缓存后在最后一个用例还是TLE，最后再加上另一处优化总算是没有超时。
+class Solution {
+ HashMap&lt;Integer, List&lt;Integer&gt;&gt; ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">
+            
+                <span>LeetCode.354 Russian Doll Envelopes</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/russian-doll-envelopes/
+题意
+求大众套娃，咦，是俄罗斯套娃的最大层数解法
+dfs+cache，从每个位置开始搜索，并记下中间结果，否则会超时
+class Solution {
+
+  HashMap&lt;int[], Integer&gt; cache = new HashMap&lt;&gt;();
+
+  public int maxEnvelopes(int[][] envelopes) {
+      int length = envelopes.length;
+      if (length =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">
+            
+                <span>LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</span>
+        </a>
+        <div class="abstract-content">
+            一段时间没做题了，发现真的没有天赋
+题意
+还是买卖股票，不限次数，但是卖出后第二天不能做任何交易解法
+感觉是dp吧
+双重循环，i表示买入，j表示卖出，第j天时的最大收益为
+
+
+当天未交易的结果dp[j - 1]
+当天完成交易的结果prices[j] - prices[i] + dp[i-2]
+非i天买入，j天时的结果dp[j]
+
+
+3种情况取最大值class Solution {
+  public int maxProfit(int[] prices) {
+      if (prices.length &lt; 2) {
+          return 0;
+      }
+    ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/07/22/LeetCode-329-Longest-Increasing-Path-in-a-Matrix/">
             
                 <span>LeetCode.329 Longest Increasing Path in a Matrix</span>
@@ -526,136 +662,6 @@ dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/21/LeetCode-306-Additive-Number/">
-            
-                <span>LeetCode.306 Additive Number</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/additive-number/
-题意
-求解一个字符串是否是类似fibonacci，即每个数是否前两个数构成解法
-看不懂题意～～看懂以后发现好像并不难，先求出前两个数，再往后推算即可
-class Solution {
-
-  public boolean isAdditiveNumber(String num) {
-      int len = num.length();
-      //先取第一个数
-      for (int i = 1; i &lt;= len; i++) {
-          //从第一个数之后取第二...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/20/LeetCode-300-Longest-Increasing-Subsequence/">
-            
-                <span>LeetCode.300 Longest Increasing Subsequence</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/longest-increasing-subsequence/
-题意
-求序列中最长可不连接递增序列😂解法
-
-
-双重遍历，复杂度$O(n^2)$
-动态规划，以nums[i]结束的最大递增序列，即从nums[i]向前遍历，如果nums[j]小于nums[i]那么nums[i]=Math.max(nums[i], nums[j] + 1)```javaclass Solution { public int lengthOfLIS(int[] nums) { if (nums == null || nums.length == 0) ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/20/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/">
-            
-                <span>LeetCode.297 Serialize and Deserialize Binary Tree</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
-题意
-实现Codec中序列化与反序列二叉树方法解法
-序列化时采用按层次遍历，其中左右子结点为空时也加入结果
-反序列化时
-
-
-将第一个结点加入queue
-queue中出列，如果结点不为null，刚从结果中取两个结点，分别赋值给结点的左右子树
-重复2直至queue为空
-class Codec {
-
- // Encodes a tree to a single string.
- public String serialize(TreeNode root) {...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/14/LeetCode-295-Find-Median-from-Data-Stream/">
-            
-                <span>LeetCode.295 Find Median from Data Stream</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/find-median-from-data-stream/
-题意
-实现一个MedianFinder，实现添加数字和查找中位数的功能，中位数定义为当数字个数位奇数时，返回中间的数，否则返回中间两个数的平均值解法
-完全不知道怎么解，看了网上的解法才知道大小堆😂
-大顶堆表示元素从小到大排列，大的元素在顶，小顶堆表示元素从大到小排列，小的元素在顶。且大堆中所有元素均小于小堆中元素。
-解法中用PriorityQueue实现大小堆
-class MedianFinder {
-
-  //小顶堆，元素从小到大排列，先取到小的元素
-  Prior...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/14</span>
             </div>
             <!-- tags  -->
             
@@ -1721,9 +1727,83 @@ class MedianFinder {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1736,6 +1816,26 @@ class MedianFinder {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">LeetCode.368 Largest Divisible Subset</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">LeetCode.377 Combination Sum IV</a>
+        </li>
     
     
         <li class="archive-post-item">

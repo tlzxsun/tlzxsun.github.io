@@ -346,6 +346,136 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/21/LeetCode-306-Additive-Number/">
+            
+                <span>LeetCode.306 Additive Number</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/additive-number/
+题意
+求解一个字符串是否是类似fibonacci，即每个数是否前两个数构成解法
+看不懂题意～～看懂以后发现好像并不难，先求出前两个数，再往后推算即可
+class Solution {
+
+  public boolean isAdditiveNumber(String num) {
+      int len = num.length();
+      //先取第一个数
+      for (int i = 1; i &lt;= len; i++) {
+          //从第一个数之后取第二...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/20/LeetCode-300-Longest-Increasing-Subsequence/">
+            
+                <span>LeetCode.300 Longest Increasing Subsequence</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/longest-increasing-subsequence/
+题意
+求序列中最长可不连接递增序列😂解法
+
+
+双重遍历，复杂度$O(n^2)$
+动态规划，以nums[i]结束的最大递增序列，即从nums[i]向前遍历，如果nums[j]小于nums[i]那么nums[i]=Math.max(nums[i], nums[j] + 1)```javaclass Solution { public int lengthOfLIS(int[] nums) { if (nums == null || nums.length == 0) ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/20/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/">
+            
+                <span>LeetCode.297 Serialize and Deserialize Binary Tree</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+题意
+实现Codec中序列化与反序列二叉树方法解法
+序列化时采用按层次遍历，其中左右子结点为空时也加入结果
+反序列化时
+
+
+将第一个结点加入queue
+queue中出列，如果结点不为null，刚从结果中取两个结点，分别赋值给结点的左右子树
+重复2直至queue为空
+class Codec {
+
+ // Encodes a tree to a single string.
+ public String serialize(TreeNode root) {...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/14/LeetCode-295-Find-Median-from-Data-Stream/">
+            
+                <span>LeetCode.295 Find Median from Data Stream</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/find-median-from-data-stream/
+题意
+实现一个MedianFinder，实现添加数字和查找中位数的功能，中位数定义为当数字个数位奇数时，返回中间的数，否则返回中间两个数的平均值解法
+完全不知道怎么解，看了网上的解法才知道大小堆😂
+大顶堆表示元素从小到大排列，大的元素在顶，小顶堆表示元素从大到小排列，小的元素在顶。且大堆中所有元素均小于小堆中元素。
+解法中用PriorityQueue实现大小堆
+class MedianFinder {
+
+  //小顶堆，元素从小到大排列，先取到小的元素
+  Prior...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/13/LeetCode-292-Nim-Game/">
             
                 <span>LeetCode.292 Nim Game</span>
@@ -506,131 +636,6 @@ class MyQueue {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-229-Majority-Element-II/">
-            
-                <span>LeetCode.229 Majority Element II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/majority-element-ii/
-题意
-求数组中占比超过1/3的数解法
-投票法（先背下～）
-class Solution {
-  public List&lt;Integer&gt; majorityElement(int[] nums) {
-      //Space Complexity : O(n)
-      //Time Complexity : O(1)
-      //There can be only 2 major elements
-      ArrayList&lt;Integer&gt; resu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-224-Basic-Calculator/">
-            
-                <span>LeetCode.224 Basic Calculator</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/basic-calculator/
-题意
-实现一个带“（”，“）”，“+”，“-”运算符的简易计算器解法
-不难但是好复杂
-class Solution {
-  public int calculate(String s) {
-      s = s.replaceAll(&quot;\\s*&quot;, &quot;&quot;);
-      int i = 0;
-      Stack&lt;String&gt; stack = new Stack&lt;&gt;();
-      while ( i &lt; s.len...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/04/LeetCode-223-Rectangle-Area/">
-            
-                <span>LeetCode.223 Rectangle Area</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/rectangle-area/
-题意
-求两个矩形所占总面积解法
-两个矩形可能有三种情况
-
-
-相交，取两个矩形面积相加减去重叠面积
-不相交，返回两个矩形面积之和
-包含，取两上矩形面积中的最大值计算出重叠面积后如果重叠面积等于其中一个的面积，说明两个矩形是包含关系。虽然结果不出超出int范围，但中间过程中还是会溢出，所以先转成long计算class Solution {
- public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/31/LeetCode-206-Course-Schedule/">
-            
-                <span>LeetCode.206 Course Schedule</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/course-schedule/
-题意
-选修课程里，基本一门课程可能要先学习另一门课程才能学习，判断是否能完成学习所有课程暴力解法
-遇到依赖时直接往递归求解被依赖的课程能否完成学习，完成后需要放入缓存，以备后续计算可能再次计算到这门课程。需要注意的一点就是循环依赖，没想出好的方法，直接在计算后续依赖时加入计数，因为依赖数最大为numCourses-1，当计算依赖次数到达numsCourses肯定是存在循环依赖。
-class Solution {
-  HashMap&lt;Integer, Boolean&gt; status =...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/31</span>
             </div>
             <!-- tags  -->
             
@@ -1622,9 +1627,83 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1637,6 +1716,26 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">LeetCode.368 Largest Divisible Subset</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">LeetCode.377 Combination Sum IV</a>
+        </li>
     
     
         <li class="archive-post-item">

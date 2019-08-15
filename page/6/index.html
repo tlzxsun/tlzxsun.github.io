@@ -359,6 +359,123 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">
+            
+                <span>LeetCode.133 Clone Graph</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/clone-graph/
+思路
+头昏眼花想不出任何方法，看了别人思路发现好简单
+1、广度优先遍历(BFS)2、深度优先遍历(DFS)2.1、递归2.2、非递归https://www.cnblogs.com/ganganloveu/p/4119462.html
+解法class Solution {
+  HashMap&lt;Node, Node&gt; map = new HashMap&lt;&gt;();
+  public Node cloneGraph(Node node) {
+      if (node == null)...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">
+            
+                <span>LeetCode.132 Palindrome Partitioning II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/palindrome-partitioning-ii/
+题意
+找出将字符串分割成回文子串的最少分割数思路
+开始想着用131的dfs，因为131没有TLE，提交之后果然还是TLE了，131因为要输出所有的分割，所以没有类似”ababababababababababababcbabababababababababababa”这样的测试用例。
+后来想用动态规划做，但是没有想出来怎么做，后来参考的别人的思路。但是第二次的DP是自己想出来的，第一次的解法很精妙，没想出来～
+(动态规划) O(n2)O(n2)一共进行两次动态规划。第一次动规...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/17/LeetCode-131-Palindrome-Partitioning/">
+            
+                <span>LeetCode.131 Palindrome Partitioning</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/palindrome-partitioning/
+题意
+取出所有的回文子串，想到的就是dfs，开始想着可能会超时，后来写出来了发现并没有
+解法class Solution {
+  Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
+  public List&lt;List&lt;String&gt;&gt; partition(String s) ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/16/LeetCode-130-Surrounded-Regions-1/">
+            
+                <span>LeetCode.130 Surrounded Regions</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/surrounded-regions/
+思路
+一开始想的是顺序找到第一个位置然后找出路，这样的话太复杂，需要记下路径判断该路径能否突围
+后面反着想就是从四个边开始找注定能突围的位置，然后向四个位置查找，只要是连通的肯定能突围，后续计算量会小很多
+写完AC后发现时间差很多，去查看了100%的答案，发现思路完成一样，于是一句句改提交为什么会慢这么多，最后发现是因为我用System.out.println()打印日志导致的😂
+
+解法class Solution {
+    public void solve(char[][] boa...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/16/LeetCode-126-Word-Ladder-II/">
             
                 <span>LeetCode.126 Word Ladder II</span>
@@ -535,134 +652,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/14/LeetCode-116-Populating-Next-Right/">
-            
-                <span>LeetCode.116 Populating Next Right </span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
-
-这题一开始想着使用按层遍历，但是不知道怎么遍历☹️，经查阅后得知使用LinkedList实现。
-给root的next增加一个特殊标签，当取到next为标签时，说明这个元素是每行第一个，并给它的右结点增加标签，因为右结点是下一层第一个遍历的(满二叉树才行)
-AC代码
-class Solution {
-
-  //上一个遍历的元素
-  Node last;
-  //第一行起始结点的特殊标签
-  Node mark = new Node();
-
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/14/LeetCode-115-Distinct-Distances/">
-            
-                <span>LeetCode.115 Distinct Distances</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/distinct-subsequences/
-
-开始时候想着递归做，后来想想肯定会超时，就放弃了。昨天刚做了八皇后问题，感觉跟这个比较像，先定确定一个位置，再继续向后查找，直到找到一个解。找到解后再回溯，写出来发现还是超时😞
-先贴下超时的解
-class Solution {
-  public int numDistinct(String s, String t) {
-      int count = 0;
-      //标记s和t的查找位置
-      int sIndex = 0, tIndex = 0;
-      L...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-99-Recover-Binary-Search-Tree/">
-            
-                <span>LeetCode.99 Recover Binary Search Tree</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/recover-binary-search-tree/
-
-二叉搜索树中序遍历(In-Order Traversal)必定有序
-
-
-先来看一个naive的方法，即使用O(n)的空间复杂度应该怎么解决．我们可以开一个数组，中序遍历树，并将其依次保存在数组中．如果是一个正常的二叉搜索树将会是完全有序的．然而当交换了其中两个结点之后就会出现两个结点出现在错误的位置．举个栗子：[1, 2, 3, 4, 5, 6]，这是一个正常的二叉搜索数的序列，当交换了其中两个结点之后变成了[1, 5, 3, 4, 2, 6]．那么如何找到这两个交换的结...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/13/LeetCode-51-N-Queens/">
-            
-                <span>LeetCode.51 N Queens</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/n-queens/
-
-经典N皇后问题，先背一个解法吧，具体见注释
-class Solution {
-  int q[];
-  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
-
-  public List&lt;List&lt;String&gt;&gt; solveNQueens(int n) {
-      int r = 0, c = 0;
-      q = new int[n];
-      for (int i = 0; i &lt; ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/13</span>
             </div>
             <!-- tags  -->
             
@@ -1728,9 +1717,83 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1743,6 +1806,26 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">LeetCode.368 Largest Divisible Subset</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">LeetCode.377 Combination Sum IV</a>
+        </li>
     
     
         <li class="archive-post-item">

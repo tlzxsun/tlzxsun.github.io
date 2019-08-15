@@ -359,6 +359,131 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">
+            
+                <span>LeetCode.147 Insertion Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/insertion-sort-list/
+题意
+使用插入排序对链表进行排序笨办法
+每次找错序的节点，断开该节点后从头开始查找合适位置并插入，能AC但是非常慢class Solution {
+  public ListNode insertionSortList(ListNode head) {
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode cur = head;
+      //是否查找到最...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">
+            
+                <span>LeetCode.145 Binary Tree Postorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/binary-tree-postorder-traversal/
+题意
+后序遍历树，非递归实现，基本跟144一致，只是最后结果需要reverse一下，但是速度比较慢
+class Solution {
+
+  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
+  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
+  public List&lt;Integer&gt; postorderTraversal(TreeNod...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-144-Binary-Tree-Preorder-Traversal/">
+            
+                <span>LeetCode.144 Binary Tree Preorder Traversal</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/binary-tree-preorder-traversal/
+题意
+二叉树前序遍历，递归的比较简单，非递归实现需要用栈存节点
+class Solution {
+
+  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
+  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
+  public List&lt;Integer&gt; preorderTraversal(TreeNode root) {
+      if (...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/24/LeetCode-143-Reorder-List/">
+            
+                <span>LeetCode.143 Reorder List</span>
+        </a>
+        <div class="abstract-content">
+            题意
+https://leetcode.com/problems/reorder-list/
+给链表重新排序，顺序变为L0→Ln→L1→Ln-1→L2→Ln-2→…笨办法
+每次找到最后一个节点，并断开最后一个节点与上一个节点连接，使第一个节点指向最后一个节点，最后一个节点指向第一个节点的原next节点。虽然能AC但是极慢
+class Solution {
+  public void reorderList(ListNode head) {
+      if (head == null || head.next == null) {
+          return;
+      }
+  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/24/LeetCode-140-Word-Break-II/">
             
                 <span>LeetCode.140 Word Break II</span>
@@ -545,123 +670,6 @@ AC解class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">
-            
-                <span>LeetCode.133 Clone Graph</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/clone-graph/
-思路
-头昏眼花想不出任何方法，看了别人思路发现好简单
-1、广度优先遍历(BFS)2、深度优先遍历(DFS)2.1、递归2.2、非递归https://www.cnblogs.com/ganganloveu/p/4119462.html
-解法class Solution {
-  HashMap&lt;Node, Node&gt; map = new HashMap&lt;&gt;();
-  public Node cloneGraph(Node node) {
-      if (node == null)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-132-Palindrome-Partitioning-II/">
-            
-                <span>LeetCode.132 Palindrome Partitioning II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/palindrome-partitioning-ii/
-题意
-找出将字符串分割成回文子串的最少分割数思路
-开始想着用131的dfs，因为131没有TLE，提交之后果然还是TLE了，131因为要输出所有的分割，所以没有类似”ababababababababababababcbabababababababababababa”这样的测试用例。
-后来想用动态规划做，但是没有想出来怎么做，后来参考的别人的思路。但是第二次的DP是自己想出来的，第一次的解法很精妙，没想出来～
-(动态规划) O(n2)O(n2)一共进行两次动态规划。第一次动规...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-131-Palindrome-Partitioning/">
-            
-                <span>LeetCode.131 Palindrome Partitioning</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/palindrome-partitioning/
-题意
-取出所有的回文子串，想到的就是dfs，开始想着可能会超时，后来写出来了发现并没有
-解法class Solution {
-  Stack&lt;String&gt; stack = new Stack&lt;&gt;();
-  List&lt;List&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
-  public List&lt;List&lt;String&gt;&gt; partition(String s) ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/16/LeetCode-130-Surrounded-Regions-1/">
-            
-                <span>LeetCode.130 Surrounded Regions</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/surrounded-regions/
-思路
-一开始想的是顺序找到第一个位置然后找出路，这样的话太复杂，需要记下路径判断该路径能否突围
-后面反着想就是从四个边开始找注定能突围的位置，然后向四个位置查找，只要是连通的肯定能突围，后续计算量会小很多
-写完AC后发现时间差很多，去查看了100%的答案，发现思路完成一样，于是一句句改提交为什么会慢这么多，最后发现是因为我用System.out.println()打印日志导致的😂
-
-解法class Solution {
-    public void solve(char[][] boa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/16</span>
             </div>
             <!-- tags  -->
             
@@ -1727,9 +1735,83 @@ AC解class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1742,6 +1824,26 @@ AC解class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">LeetCode.368 Largest Divisible Subset</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">LeetCode.377 Combination Sum IV</a>
+        </li>
     
     
         <li class="archive-post-item">

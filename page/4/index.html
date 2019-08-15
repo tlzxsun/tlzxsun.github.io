@@ -359,6 +359,121 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/29/LeetCode-213-House-Robber-II/">
+            
+                <span>LeetCode.213 House Robber II</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/house-robber-ii/submissions/
+题意
+与198基本一样，专业劫匪去打劫一排房子，由于打劫相邻的房子会触发警报，因此只能打劫不相邻的房子，并且房子围成了圈，所以不能同时打劫首尾的房子，求能打劫的最大钱数。解法
+动态规划，很容易得到动态方程dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])，即当前位置最大钱为打劫到前两栋加上当前的钱与打劫到前一栋的最大值，由于是i-2，因此dp数组大小定义为nums.length+2。
+由于首尾的房子不能同时打劫，因此分开计算不包含第一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/29/LeetCode-198-House-Robber/">
+            
+                <span>LeetCode.198 House Robber</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/house-robber/
+题意
+专业劫匪去打劫一排房子，由于打劫相邻的房子会触发警报，因此只能打劫不相邻的房子，求能打劫的最大钱数解法
+动态规划，很容易得到动态方程dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])，即当前位置最大钱为打劫到前两栋加上当前的钱与打劫到前一栋的最大值，由于是i-2，因此dp数组大小定义为nums.length+2class Solution {
+  public int rob(int[] nums) {
+      int dp[] = new int[nu...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/29/LeetCode-190-Reverse-Bits/">
+            
+                <span>LeetCode.190 Reverse Bits</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/reverse-bits/
+题意
+整数按位翻转解法
+由于限制位数为32位，所以只需对待处理的整数n进行32次右移位，每当低位&amp;1的结果为1，说明低位为1，此时将待输出的目标整数(默认值为0)左移动一位并加上1；每当低位&amp;1的结果为0，说明低位为0，此时将待输出的目标整数左移一位即可；循环直到移动完32次，所得目标整数即为所求。https://blog.csdn.net/pistolove/article/details/46868017
+
+
+
+class Solution {
+    public int rev...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/29</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/05/28/LeetCode-179-Largest-Number/">
+            
+                <span>LeetCode.179 Largest Number</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/largest-number/
+题意
+求int数组拼接的最大值解法
+先转成String，然后排序。排序里先按位比较，当2个数字开头相等但长度不等，则比较这两个数字拼接结果```javaclass Solution {  public String largestNumber(int[] nums) {
+  List&lt;String&gt; ns = Arrays.stream(nums).mapToObj(new IntFunction&lt;String&gt;() {
+      @Override
+      publ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/28/LeetCode-174-Dungeon-Game/">
             
                 <span>LeetCode.174 Dungeon Game</span>
@@ -540,131 +655,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">
-            
-                <span>LeetCode.147 Insertion Sort List</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/insertion-sort-list/
-题意
-使用插入排序对链表进行排序笨办法
-每次找错序的节点，断开该节点后从头开始查找合适位置并插入，能AC但是非常慢class Solution {
-  public ListNode insertionSortList(ListNode head) {
-      if (head == null || head.next == null) {
-          return head;
-      }
-      ListNode cur = head;
-      //是否查找到最...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/24/LeetCode-145-Binary-Tree-Postorder-Traversal/">
-            
-                <span>LeetCode.145 Binary Tree Postorder Traversal</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/binary-tree-postorder-traversal/
-题意
-后序遍历树，非递归实现，基本跟144一致，只是最后结果需要reverse一下，但是速度比较慢
-class Solution {
-
-  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
-  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
-  public List&lt;Integer&gt; postorderTraversal(TreeNod...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/24/LeetCode-144-Binary-Tree-Preorder-Traversal/">
-            
-                <span>LeetCode.144 Binary Tree Preorder Traversal</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/binary-tree-preorder-traversal/
-题意
-二叉树前序遍历，递归的比较简单，非递归实现需要用栈存节点
-class Solution {
-
-  List&lt;Integer&gt; results = new ArrayList&lt;&gt;();
-  Stack&lt;TreeNode&gt; stacks = new Stack&lt;&gt;();
-  public List&lt;Integer&gt; preorderTraversal(TreeNode root) {
-      if (...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/24/LeetCode-143-Reorder-List/">
-            
-                <span>LeetCode.143 Reorder List</span>
-        </a>
-        <div class="abstract-content">
-            题意
-https://leetcode.com/problems/reorder-list/
-给链表重新排序，顺序变为L0→Ln→L1→Ln-1→L2→Ln-2→…笨办法
-每次找到最后一个节点，并断开最后一个节点与上一个节点连接，使第一个节点指向最后一个节点，最后一个节点指向第一个节点的原next节点。虽然能AC但是极慢
-class Solution {
-  public void reorderList(ListNode head) {
-      if (head == null || head.next == null) {
-          return;
-      }
-  ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
             </div>
             <!-- tags  -->
             
@@ -1730,9 +1720,83 @@ class Solution {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1745,6 +1809,26 @@ class Solution {
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-368-Largest-Divisible-Subset/">LeetCode.368 Largest Divisible Subset</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">LeetCode.377 Combination Sum IV</a>
+        </li>
     
     
         <li class="archive-post-item">
