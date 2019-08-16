@@ -359,6 +359,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">
+            
+                <span>LeetCode.312 Burst Balloons</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/burst-balloons/
+题意
+给你一个数组,你要爆掉所有数字，爆某个数字的时候会获得它现在相邻的两个数字和它的乘积。如果这个数字没有左相邻或右相邻，则乘1代替，问爆掉所有数字的最高分数。思路
+暴力计算的话复杂度为O(n!)肯定会超时
+看到别人的解法是区间dp
+
+dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我们枚举[i,j]里最后一个爆掉的数字的位置k.由于我们只爆掉[i,j]里的元素,因此最后爆掉k的时候,k的左右邻居一定是i-1和j+1.初始化为:dp[i][i]=arr[i-1]arr[i]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/21/LeetCode-306-Additive-Number/">
             
                 <span>LeetCode.306 Additive Number</span>
@@ -612,38 +641,6 @@ queue中取值赋给current，计算1到current之间的所有平方数
 
 digit == 1，刚f(n) = 1 + n%k + f(n%k) + f(k-1)，即以1开头位数与n相同的数共有n%k+1个，再加上n%k里1的出现次数再加上0到k-1里1的出现次数即是最后结果
 digit != 1，则f(n) = f[k, n] + f(k-1)，即结果为k到n的数里1的出现次数加上0到k-1里1的出现次数2.1 其中f[k, n] =...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/05/LeetCode-232-Implement-Queue-using-Stacks/">
-            
-                <span>LeetCode.232 Implement Queue using Stacks</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/implement-queue-using-stacks/submissions/
-题意
-用Stack来实现队列的功能解法
-采用两个Stack sPush和sPop来实现，push时加进sPush，pop时判断sPop是否为空，否则将sPush中的所有元素加进sPop，再从sPop中pop
-class MyQueue {
-
-  Stack&lt;Integer&gt; push = new Stack&lt;&gt;();
-  Stack&lt;Integer&gt; pop = new Stack&lt;&gt;();
-
-  ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1763,34 +1760,9 @@ class MyQueue {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -1806,12 +1778,17 @@ class MyQueue {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">LeetCode.376 Wiggle Subsequence</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
         </li>
     
     

@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">
+            
+                <span>LeetCode.376 Wiggle Subsequence</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/wiggle-subsequence/
+题意
+求数组中最长子序列满足wiggle subsequence要求（即一大一小错开）解法
+
+
+DFS对数组进行循环，第一个数时下一个数可以比它大也可以比它小，之后依次递推。直接DFS肯定会TLE，需要记录中间结果
+class Solution {
+ int dp[][];
+ public int wiggleMaxLength(int[] nums) {
+     //dp用来记录中间结果
+     dp = new int[3][nums.length];
+     int max =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">
             
                 <span>LeetCode.377 Combination Sum IV</span>
@@ -1506,34 +1540,9 @@ class Solution {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -1549,12 +1558,17 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">LeetCode.376 Wiggle Subsequence</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
         </li>
     
     

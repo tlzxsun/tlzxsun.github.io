@@ -359,6 +359,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">
+            
+                <span>LeetCode.134 Gas Station</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/gas-station/submissions/
+思路1 
+算出每个station出发之后剩余的gas，保存在数组中
+从数组中找出剩余gas不小于0的位置，然后从该位置开始查询，走回原点或者gas小于0退出循环
+这个解法能AC，但是非常慢，继续想
+
+
+AC解class Solution {
+  public int canCompleteCircuit(int[] gas, int[] cost) {
+      int gasLeft[] = new int[gas.length];
+      for (int i = 0...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/17/LeetCode-133-Clone-Graph/">
             
                 <span>LeetCode.133 Clone Graph</span>
@@ -615,38 +648,6 @@ class Solution {
  HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; map = new HashMap&lt;&gt;();
  List&lt;List&lt;Integer&gt;&gt; results = new ArrayList&lt;&gt;();
  public List&lt;List&lt;Intege...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/15/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/">
-            
-                <span>LeetCode.117 Populating Next Right Pointers in Each Node II</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
-题意
-这一题与116的区别就在于这一题不是满二叉树，所以下一行的起点不是第一个节点的左结点，因此不能用116中的解法。最笨的办法就是用116的方法先层次遍历将每一个结点的next指向下一个遍历到的，然后再右序遍历将最右边结点的next清空，时间复杂度为O(2n)，空间复杂度为O(n)，这样也能AC😂
-
-class Solution {
-
-    //上一个遍历的元素
-    Node last;
-
-    public Node c...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1766,34 +1767,9 @@ class Solution {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -1809,12 +1785,17 @@ class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">LeetCode.376 Wiggle Subsequence</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
         </li>
     
     

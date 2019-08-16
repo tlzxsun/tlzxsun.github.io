@@ -346,6 +346,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/05/25/LeetCode-148-Sort-List/">
+            
+                <span>LeetCode.148 Sort List</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/sort-list/
+题意
+不借助额外空间对链表进行排序解法
+先使用快慢指针将链表分为前后两部分，分别对两部分排序，最后对排序好的两个链表进行合并
+class Solution {
+  public ListNode sortList(ListNode head) {
+      //当head为null或仅剩head的时候直接返回
+      if (head == null || head.next == null) {
+          return head;
+      }
+      ListNode fast =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/24/LeetCode-147-Insertion-Sort-List/">
             
                 <span>LeetCode.147 Insertion Sort List</span>
@@ -624,39 +657,6 @@ class Solution {
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/17/LeetCode-134-Gas-Station-1/">
-            
-                <span>LeetCode.134 Gas Station</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/gas-station/submissions/
-思路1 
-算出每个station出发之后剩余的gas，保存在数组中
-从数组中找出剩余gas不小于0的位置，然后从该位置开始查询，走回原点或者gas小于0退出循环
-这个解法能AC，但是非常慢，继续想
-
-
-AC解class Solution {
-  public int canCompleteCircuit(int[] gas, int[] cost) {
-      int gasLeft[] = new int[gas.length];
-      for (int i = 0...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/17</span>
             </div>
             <!-- tags  -->
             
@@ -1697,34 +1697,9 @@ AC解class Solution {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -1740,12 +1715,17 @@ AC解class Solution {
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">LeetCode.376 Wiggle Subsequence</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
         </li>
     
     

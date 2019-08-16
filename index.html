@@ -359,6 +359,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">
+            
+                <span>LeetCode.376 Wiggle Subsequence</span>
+        </a>
+        <div class="abstract-content">
+            https://leetcode.com/problems/wiggle-subsequence/
+题意
+求数组中最长子序列满足wiggle subsequence要求（即一大一小错开）解法
+
+
+DFS对数组进行循环，第一个数时下一个数可以比它大也可以比它小，之后依次递推。直接DFS肯定会TLE，需要记录中间结果
+class Solution {
+ int dp[][];
+ public int wiggleMaxLength(int[] nums) {
+     //dp用来记录中间结果
+     dp = new int[3][nums.length];
+     int max =...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/08/15/LeetCode-377-Combination-Sum-IV/">
             
                 <span>LeetCode.377 Combination Sum IV</span>
@@ -633,35 +667,6 @@ https://www.cnblogs.com/grandyang/p/5100098.html这道题给了我们n个灯泡�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/24/LeetCode-312-Burst-Balloons/">
-            
-                <span>LeetCode.312 Burst Balloons</span>
-        </a>
-        <div class="abstract-content">
-            https://leetcode.com/problems/burst-balloons/
-题意
-给你一个数组,你要爆掉所有数字，爆某个数字的时候会获得它现在相邻的两个数字和它的乘积。如果这个数字没有左相邻或右相邻，则乘1代替，问爆掉所有数字的最高分数。思路
-暴力计算的话复杂度为O(n!)肯定会超时
-看到别人的解法是区间dp
-
-dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我们枚举[i,j]里最后一个爆掉的数字的位置k.由于我们只爆掉[i,j]里的元素,因此最后爆掉k的时候,k的左右邻居一定是i-1和j+1.初始化为:dp[i][i]=arr[i-1]arr[i]...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/24</span>
             </div>
             <!-- tags  -->
             
@@ -1776,34 +1781,9 @@ dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -1819,12 +1799,17 @@ dp[i][j]表示只爆掉[i,j]里所有数字后能获得的最大分数,那么我
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/LeetCode-376-Wiggle-Subsequence/">LeetCode.376 Wiggle Subsequence</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">LeetCode.309 Best Time to Buy and Sell Stock with Cooldown</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/15</span><a class="archive-post-title" href="/2019/08/15/LeetCode-354-Russian-Doll-Envelopes/">LeetCode.354 Russian Doll Envelopes</a>
         </li>
     
     
